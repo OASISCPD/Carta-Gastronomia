@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+:root {
+  --brand-1: #FFFF00;
+  --brand-2: #FFD600;
+  --brand-3: #F1AA1D;
+  --brand-4: #FCC978;
+}

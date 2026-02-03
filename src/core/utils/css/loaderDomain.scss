@@ -1,0 +1,138 @@
+// Variables
+$primary-color: #ff0000; // Color rojo para el logo
+$bg-color: #1A1F2B; // Fondo oscuro semitransparente
+
+// Loader pantalla completa
+.loader-container {
+    position: fixed; // Ocupa toda la pantalla
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $bg-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; // Asegura que esté encima de todo
+    // Para ocultarlo cuando no se necesite
+    &.hidden {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    &.visible {
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+}
+
+// Nuevo loader con estilo de palmera
+.palm-loader {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .palm-tree {
+    position: relative;
+    width: 40px;
+    height: 60px;
+    z-index: 2;
+
+    .trunk {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 8px;
+        height: 30px;
+        background: $primary-color;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+
+    .leaves {
+        position: absolute;
+        background: $primary-color;
+        border-radius: 50% 50% 0 50%;
+        width: 20px;
+        height: 20px;
+        
+        &.left-leaf {
+            top: 15px;
+            left: 2px;
+            transform: rotate(-45deg);
+        }
+        
+        &.right-leaf {
+            top: 15px;
+            right: 2px;
+            transform: rotate(45deg);
+        }
+        
+        &.top-leaf {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+        }
+    }
+} */
+
+.palm-image {
+    width: 60px;
+    height: auto;
+    z-index: 2;
+    position: relative;
+}
+
+.dots-circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: rotate 4s linear infinite;
+
+    .dot {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: $primary-color;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        margin-left: -3px;
+        margin-top: -3px;
+        opacity: 0;
+        animation: fadeInOut 2s ease-in-out infinite;
+    }
+
+    @for $i from 0 through 23 {
+        .dot:nth-child(#{$i + 1}) {
+            animation-delay: #{$i * 0.08}s;
+        }
+    }
+}
+
+// Animaciones
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
