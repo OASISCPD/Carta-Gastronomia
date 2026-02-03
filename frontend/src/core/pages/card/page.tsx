@@ -29,6 +29,18 @@ const PageCard = () => {
     );
   }, [selectedCategory, decoded]);
 
+  // Group filtered items by classification
+  const groupedItems = useMemo(() => {
+    const groups: { [key: string]: typeof filteredItems } = {};
+    filteredItems.forEach((item) => {
+      if (!groups[item.clasificacion]) {
+        groups[item.clasificacion] = [];
+      }
+      groups[item.clasificacion].push(item);
+    });
+    return groups;
+  }, [filteredItems]);
+
   // Logic to pick a chef suggestion (e.g., first item or a specific one)
   const suggestionItem = useMemo(() => {
     if (filteredItems.length === 0) return null;
@@ -61,37 +73,57 @@ const PageCard = () => {
       {/* Menu Section */}
       <section className="py-8 sm:py-12">
         {/* Section Header */}
-        <div className="text-center mb-8 sm:mb-12">
+        <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-transparent to-[var(--gold-primary)]"></div>
             <div className="w-2 h-2 rounded-full bg-[var(--red-accent)]"></div>
             <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-[var(--gold-primary)]"></div>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 uppercase tracking-wider">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 uppercase tracking-[0.2em]">
             {decoded}
           </h2>
-          <p className="text-white/50 text-sm sm:text-base">
+          <p className="text-white/40 text-sm sm:text-base tracking-[0.1em]">
             {selectedCategory === "all"
-              ? "Descubrí nuestra selección gastronómica"
-              : selectedCategory.charAt(0).toUpperCase() +
-                selectedCategory.slice(1).toLowerCase()}
+              ? "Nuestra Selección Gastronómica"
+              : selectedCategory.toUpperCase()}
           </p>
         </div>
 
         {/* Chef Suggestion Section */}
-        {suggestionItem && (
-          <div className="mb-12">
+        {suggestionItem && selectedCategory === "all" && (
+          <div className="mb-20">
             <ChefSuggestion suggestion={suggestionItem} />
           </div>
         )}
 
-        {/* Menu Grid - Responsive */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-          {filteredItems.map((item, index) => (
-            <MenuComponent
-              key={`${item["nombre largo"]}-${index}`}
-              item={item}
-            />
+        <div className="space-y-24">
+          {Object.entries(groupedItems).map(([category, items]) => (
+            <div key={category} className="category-section">
+              {/* Category Sub-Header (The requested separator) */}
+              <div className="text-center mb-10">
+                <div className="flex items-center justify-center gap-4 mb-3 opacity-60">
+                  <div className="w-8 sm:w-16 h-[1px] bg-gradient-to-r from-transparent to-[var(--gold-primary)]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[var(--red-accent)]"></div>
+                  <div className="w-8 sm:w-16 h-[1px] bg-gradient-to-l from-transparent to-[var(--gold-primary)]"></div>
+                </div>
+                <h3
+                  className="text-xl sm:text-2xl font-bold text-[var(--gold-primary)]/80 uppercase tracking-[0.25em]"
+                  style={{ fontFamily: "'Cinzel', serif" }}
+                >
+                  {category}
+                </h3>
+              </div>
+
+              {/* Menu Grid - Responsive */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 px-4">
+                {items.map((item, index) => (
+                  <MenuComponent
+                    key={`${item["nombre largo"]}-${index}`}
+                    item={item}
+                  />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>

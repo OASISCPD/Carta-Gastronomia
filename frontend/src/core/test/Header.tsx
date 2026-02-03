@@ -17,10 +17,10 @@ const Header = () => {
               className="text-2xl sm:text-3xl font-bold tracking-[0.1em] bg-gradient-to-r from-[var(--gold-light)] via-[var(--gold-primary)] to-[var(--gold-dark)] bg-clip-text text-transparent"
               style={{ fontFamily: "'Cinzel', serif" }}
             >
-              KM 50
+              NCA
             </h1>
             <span className="text-[10px] sm:text-xs tracking-[0.3em] text-[var(--red-accent)] font-medium uppercase">
-              Bingo & Restaurant
+              Gastronomía
             </span>
           </div>
         </div>
