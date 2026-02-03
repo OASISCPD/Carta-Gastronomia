@@ -1,37 +1,33 @@
+import { ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
-import { ArrowLeft/* , ShoppingCart */ } from 'lucide-react';
-/* 
-interface HeaderProps {
-  cartCount: number;
-  onCartClick: () => void;
-} */
-
-const Header/* : FC<HeaderProps> */ = (/* { cartCount, onCartClick } */) => {
+const Header = () => {
   return (
-    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+    <header className="glass-dark sticky top-0 z-50 py-4 px-4 sm:px-6">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
-        <div className="flex items-center space-x-4">
-          <button className="p-2 hover:bg-gray-700 rounded-full transition-colors">
-            <ArrowLeft size={20} />
-          </button>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-            KM 50
-          </h1>
+        <div className="flex items-center gap-4">
+          <Link
+            to="/home"
+            className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 hover:border-[var(--gold-primary)]"
+          >
+            <ArrowLeft size={20} className="text-white/80" />
+          </Link>
+          <div className="flex flex-col">
+            <h1
+              className="text-2xl sm:text-3xl font-bold tracking-[0.1em] bg-gradient-to-r from-[var(--gold-light)] via-[var(--gold-primary)] to-[var(--gold-dark)] bg-clip-text text-transparent"
+              style={{ fontFamily: "'Cinzel', serif" }}
+            >
+              KM 50
+            </h1>
+            <span className="text-[10px] sm:text-xs tracking-[0.3em] text-[var(--red-accent)] font-medium uppercase">
+              Bingo & Restaurant
+            </span>
+          </div>
         </div>
 
-        {/*  <button
-          onClick={onCartClick}
-          className="relative p-2 hover:bg-gray-700 rounded-full transition-colors"
-        >
-          <ShoppingCart size={20} />
-          {cartCount > 0 && (
-            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-              {cartCount}
-            </span>
-          )}
-        </button> */}
+        {/* Decorative element */}
       </div>
-    </div>
+    </header>
   );
 };
 

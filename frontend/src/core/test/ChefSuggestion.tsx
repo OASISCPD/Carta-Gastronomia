@@ -1,62 +1,101 @@
-import React from 'react';
-import { Star, Plus } from 'lucide-react';
-import type { MenuItem } from '../types';
-/* import { MenuItem as MenuItemType } from '../types/menu'; */
+import React from "react";
+import { Sparkles } from "lucide-react";
+import type { MenuItem } from "../types";
 
 interface ChefSuggestionProps {
   suggestion: MenuItem;
-  onAddToCart: (item: MenuItem, size: 'individual' | 'complete') => void;
 }
 
-const ChefSuggestion: React.FC<ChefSuggestionProps> = ({ suggestion, onAddToCart }) => {
+const ChefSuggestion: React.FC<ChefSuggestionProps> = ({ suggestion }) => {
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('es-AR', {
-      style: 'currency',
-      currency: 'ARS',
+    return new Intl.NumberFormat("es-AR", {
+      style: "currency",
+      currency: "ARS",
       minimumFractionDigits: 0,
     }).format(price);
   };
 
   return (
-    <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-6 mx-4 rounded-xl shadow-2xl">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-center mb-4">
-          <Star className="text-yellow-400 mr-2" size={24} />
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-            SUGERENCIA DEL CHEF
-          </h2>
-          <Star className="text-yellow-400 ml-2" size={24} />
-        </div>
+    <div className="relative mx-4 mb-10 group">
+      {/* Premium Outer Frame */}
+      <div className="absolute -inset-[1px] bg-gradient-to-r from-transparent via-[var(--gold-primary)]/30 to-transparent rounded-2xl blur-[2px]"></div>
 
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <img
-              src="https://images.pexels.com/photos/1516415/pexels-photo-1516415.jpeg?auto=compress&cs=tinysrgb&w=200"
-              alt={suggestion["nombre largo"]}
-              className="w-16 h-16 rounded-lg object-cover"
-            />
-            <div>
-              <h3 className="font-bold text-lg">{suggestion["nombre largo"]}</h3>
-              <p className="text-gray-300 text-sm">Recomendación especial del chef</p>
+      <div className="relative bg-[#0d0d0d] border border-white/5 rounded-2xl overflow-hidden shadow-2xl">
+        {/* Subtle pattern or texture */}
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-15 pointer-events-none"></div>
+
+        <div className="p-0.5">
+          {/* Inner Golden Border */}
+          <div className="border border-[var(--gold-primary)]/15 rounded-[14px] p-4 sm:p-6">
+            <div className="max-w-6xl mx-auto">
+              {/* Horizontal Layout for Space Efficiency */}
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-4 text-center">
+                {/* Left: Branding & Info (Centered internally) */}
+                <div className="flex-1 flex flex-col items-center gap-3">
+                  <div className="flex items-center gap-2">
+                    <Sparkles
+                      className="text-[var(--gold-primary)]"
+                      size={16}
+                    />
+                    <h2
+                      className="text-sm sm:text-base font-bold tracking-[0.25em] text-[var(--gold-primary)] uppercase"
+                      style={{ fontFamily: "'Cinzel', serif" }}
+                    >
+                      Sugerencia
+                    </h2>
+                    <Sparkles
+                      className="text-[var(--gold-primary)]"
+                      size={16}
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-white tracking-tight leading-tight">
+                      {suggestion["nombre largo"]}
+                    </h3>
+                    <p className="text-[var(--gold-light)]/60 text-[10px] sm:text-xs font-medium tracking-[0.15em] uppercase flex items-center justify-center gap-2">
+                      <span className="w-4 h-[1px] bg-[var(--gold-primary)]/20"></span>
+                      <span className="animate-gold-breathing">
+                        Recomendación
+                      </span>
+                      <span className="w-4 h-[1px] bg-[var(--gold-primary)]/20"></span>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Center: Image (Compact Frame) */}
+                <div className="relative px-2">
+                  <div className="absolute -inset-4 bg-[var(--gold-primary)]/5 rounded-full blur-xl"></div>
+                  <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-gradient-to-tr from-[var(--gold-dark)]/50 via-[var(--gold-light)]/50 to-[var(--gold-dark)]/50">
+                    <div className="w-full h-full rounded-full overflow-hidden border border-black/50">
+                      <img
+                        src="https://images.pexels.com/photos/1516415/pexels-photo-1516415.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt={suggestion["nombre largo"]}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Price Showcase (Centered internally) */}
+                <div className="flex-1 flex flex-col items-center gap-1">
+                  <span className="text-[9px] text-white/25 tracking-[0.3em] font-medium uppercase">
+                    Precio en Salón
+                  </span>
+                  <div className="flex flex-col items-center">
+                    <span
+                      className="text-3xl sm:text-4xl font-black text-[var(--gold-primary)] tracking-tighter"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    >
+                      {formatPrice(suggestion.monto)}
+                    </span>
+                    <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[var(--gold-primary)]/30 to-transparent"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div className="flex items-center space-x-4">
-            <span className="text-3xl font-bold text-yellow-400">
-              {formatPrice(suggestion.monto)}
-            </span>
-            <button
-              onClick={() => onAddToCart(suggestion, 'complete')}
-              className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black p-3 rounded-full transition-all transform hover:scale-105"
-            >
-              <Plus size={20} />
-            </button>
-          </div>
         </div>
-
-        <button className="mt-4 text-orange-400 text-sm font-medium hover:text-orange-300 transition-colors block mx-auto">
-          + info
-        </button>
       </div>
     </div>
   );

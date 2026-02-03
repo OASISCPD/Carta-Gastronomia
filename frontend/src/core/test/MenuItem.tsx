@@ -1,109 +1,122 @@
-import React from 'react';
-/* import { Plus } from 'lucide-react'; */
-import type { MenuItem } from '../types';
+import React from "react";
+import type { MenuItem } from "../types";
 
 interface MenuItemProps {
   item: MenuItem;
-  onAddToCart: (item: MenuItem, size: 'individual' | 'complete') => void;
 }
 
-export const MenuComponent: React.FC<MenuItemProps> = ({ item/* , onAddToCart */ }) => {
+export const MenuComponent: React.FC<MenuItemProps> = ({ item }) => {
   const getItemImage = (itemName: string, category: string) => {
     const name = itemName.toLowerCase();
 
-    if (category === 'pizzas') {
-      if (name.includes('napolitana')) return 'https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=400';
-      if (name.includes('calabresa')) return 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=400';
-      return 'https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=400';
+    if (category === "PIZZA Y EMPANADA" || category.includes("PIZZA")) {
+      if (name.includes("napolitana"))
+        return "https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=400";
+      if (name.includes("calabresa"))
+        return "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=400";
+      return "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=400";
     }
 
-    if (category === 'platos principales') {
-      if (name.includes('salmon')) return 'https://images.pexels.com/photos/1516415/pexels-photo-1516415.jpeg?auto=compress&cs=tinysrgb&w=400';
-      if (name.includes('lomo')) return 'https://images.pexels.com/photos/361184/asparagus-steak-veal-steak-veal-361184.jpeg?auto=compress&cs=tinysrgb&w=400';
-      if (name.includes('pollo') || name.includes('suprema')) return 'https://images.pexels.com/photos/106343/pexels-photo-106343.jpeg?auto=compress&cs=tinysrgb&w=400';
-      if (name.includes('milanesa')) return 'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=400';
-      return 'https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=400';
+    if (category === "SANDWICHERIA" || category.includes("HAMBURGUESA")) {
+      return "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=400";
     }
 
-    if (category.includes('ENSALADAS')) {
-      return 'https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=400';
+    if (category === "SNACK") {
+      return "https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=400";
     }
 
-    if (category === 'PASTAS') {
-      if (name.includes('ravioles')) return 'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=400';
-      if (name.includes('sorrentinos')) return 'https://images.pexels.com/photos/4518841/pexels-photo-4518841.jpeg?auto=compress&cs=tinysrgb&w=400';
-      return 'https://images.pexels.com/photos/1438672/pexels-photo-1438672.jpeg?auto=compress&cs=tinysrgb&w=400';
+    if (category.includes("BEBIDAS") || category === "CERVEZA") {
+      return "https://images.pexels.com/photos/3008509/pexels-photo-3008509.jpeg?auto=compress&cs=tinysrgb&w=400";
     }
 
-    if (category === 'POSTRES') {
-      if (name.includes('flan')) return 'https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=400';
-      if (name.includes('helado')) return 'https://images.pexels.com/photos/1362534/pexels-photo-1362534.jpeg?auto=compress&cs=tinysrgb&w=400';
-      if (name.includes('brownie')) return 'https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=400';
-      return 'https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=400';
+    if (
+      category === "COCTELERIA" ||
+      category === "WISHKY" ||
+      category === "GIN"
+    ) {
+      return "https://images.pexels.com/photos/1189257/pexels-photo-1189257.jpeg?auto=compress&cs=tinysrgb&w=400";
     }
 
-    return 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400';
+    if (category === "POSTRE") {
+      return "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=400";
+    }
+
+    if (category === "CAFETERIA") {
+      return "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400";
+    }
+
+    return "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400";
   };
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('es-AR', {
-      style: 'currency',
-      currency: 'ARS',
+    return new Intl.NumberFormat("es-AR", {
+      style: "currency",
+      currency: "ARS",
       minimumFractionDigits: 0,
     }).format(price);
   };
 
   const formatName = (name: string) => {
-    return name.split('(')[0].trim();
+    return name.split("(")[0].trim();
   };
 
   const getDescription = (name: string) => {
     const match = name.match(/\(([^)]+)\)/);
-    return match ? match[1] : '';
+    return match ? match[1] : "";
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-      <div className="relative">
+    <div className="group glass rounded-2xl overflow-hidden hover-gold-glow transition-all duration-500">
+      {/* Image Container */}
+      <div className="relative overflow-hidden">
         <img
           src={getItemImage(item["nombre largo"], item.clasificacion)}
           alt={item["nombre largo"]}
-          className="w-full h-48 object-cover"
+          className="w-full h-44 sm:h-48 object-cover transition-transform duration-700 group-hover:scale-110"
         />
+        {/* Darker Gradient Overlay for better contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+        {/* Category Badge */}
         <div className="absolute top-3 left-3">
-          <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-2 py-1 rounded-full text-xs font-medium">
+          <span className="px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold tracking-wide bg-[var(--red-accent)] text-white shadow-lg">
             {item.clasificacion.toUpperCase()}
+          </span>
+        </div>
+
+        {/* Price Badge on Image */}
+        <div className="absolute bottom-3 right-3">
+          <span className="px-3 py-1.5 rounded-lg text-sm sm:text-base font-bold bg-black/80 backdrop-blur-sm text-[var(--gold-primary)] border border-[var(--gold-primary)]/40 shadow-lg">
+            {formatPrice(item.monto)}
           </span>
         </div>
       </div>
 
-      <div className="p-4">
-        <h3 className="font-bold text-gray-800 text-lg mb-2 leading-tight">
+      {/* Content - Enhanced background for better text readability */}
+      <div className="p-4 sm:p-5 bg-black/30 backdrop-blur-sm">
+        <h3
+          className="font-semibold text-white text-base sm:text-lg mb-2 leading-tight line-clamp-2 group-hover:text-[var(--gold-light)] transition-colors duration-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+          style={{ fontFamily: "Montserrat, sans-serif" }}
+        >
           {formatName(item["nombre largo"])}
         </h3>
 
         {getDescription(item["nombre largo"]) && (
-          <p className="text-gray-600 text-sm mb-3 leading-relaxed">
+          <p className="text-white/80 text-xs sm:text-sm mb-4 leading-relaxed line-clamp-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
             {getDescription(item["nombre largo"])}
           </p>
         )}
 
-        <div className="flex items-center justify-between">
-          <div className="flex flex-col">
-            <span className="text-2xl font-bold text-gray-800">
-              {formatPrice(item.monto)}
-            </span>
-            {item["monto individual"] && (
-              <span className="text-sm text-gray-500">
-                Individual: {formatPrice(item["monto individual"])}
+        <div className="flex items-center justify-between pt-3">
+          {item["monto individual"] && (
+            <span className="text-xs text-white/70 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+              Individual:{" "}
+              <span className="text-[var(--gold-light)] font-semibold">
+                {formatPrice(item["monto individual"])}
               </span>
-            )}
-          </div>
+            </span>
+          )}
         </div>
-
-        <button className="mt-3 text-orange-500 text-sm font-medium hover:text-orange-600 transition-colors">
-          + info
-        </button>
       </div>
     </div>
   );

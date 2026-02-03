@@ -1,156 +1,102 @@
-import { useParams, type Params } from "react-router-dom"
-import { MenuKM5090 } from '../../utils/menu.ts'
+import { useParams, type Params } from "react-router-dom";
+import { MenuKM5090 } from "../../utils/menu";
 import { useMemo, useState } from "react";
-import type { CartItem, MenuItem as MenuItemType } from "../../types/index";
-import Cart from "../../test/Cart.tsx";
 import Header from "../../test/Header.tsx";
 import CategoryFilter from "../../test/CategoryFilter.tsx";
-import ChefSuggestion from "../../test/ChefSuggestion.tsx";
-import DietaryFilters from "../../test/DietaryFilters.tsx";
 import { MenuComponent } from "../../test/MenuItem.tsx";
+import ChefSuggestion from "../../test/ChefSuggestion.tsx";
 
 const PageCard = () => {
-    const { value } = useParams<Params>()
-    console.log(value);
+  const { value } = useParams<Params>();
+  const decoded = value ? decodeURIComponent(value) : undefined;
 
-    const decoded = value ? decodeURIComponent(value) : undefined;
-    console.log(MenuKM5090);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
-    const [selectedCategory, setSelectedCategory] = useState<string>('all');
-    const [cartItems, setCartItems] = useState<CartItem[]>([]);
-    const [isCartOpen, setIsCartOpen] = useState(false);
-    const [dietaryFilters, setDietaryFilters] = useState({
-        vegetarian: false,
-        new: false,
-        vegan: false,
-        kids: false,
-        celiac: false,
-    });
-    // Get unique categories
-    const categories = useMemo(() => {
-        return Array.from(new Set(MenuKM5090.map(item => item.clasificacion)));
-    }, []);
+  // Get unique categories from the current carta
+  const categories = useMemo(() => {
+    const itemsInCarta = MenuKM5090.filter((item) => item.carta === decoded);
+    return Array.from(
+      new Set(itemsInCarta.map((item) => item.clasificacion)),
+    ).filter((c) => c !== "PROMO");
+  }, [decoded]);
 
-    // Get chef suggestion (most expensive item)
-    const chefSuggestion = useMemo(() => {
-        return MenuKM5090.reduce((max, item) =>
-            item.monto > max.monto ? item : max
-        );
-    }, []);
-
-    // Filter items based on selected category
-    const filteredItems = useMemo(() => {
-        return MenuKM5090.filter(item =>
-            selectedCategory === 'all' || item.clasificacion === selectedCategory
-        );
-    }, [selectedCategory]);
-
-    const handleCategoryChange = (category: string) => {
-        setSelectedCategory(category);
-    };
-
-    const handleDietaryFilterChange = (filter: string) => {
-        setDietaryFilters(prev => ({
-            ...prev,
-            [filter]: !prev[filter as keyof typeof prev]
-        }));
-    };
-
-    const handleAddToCart = (item: MenuItemType, size: 'individual' | 'complete') => {
-        const existingItemIndex = cartItems.findIndex(
-            cartItem =>
-                cartItem["nombre largo"] === item["nombre largo"] &&
-                cartItem.selectedSize === size
-        );
-
-        if (existingItemIndex >= 0) {
-            const newCartItems = [...cartItems];
-            newCartItems[existingItemIndex].quantity += 1;
-            setCartItems(newCartItems);
-        } else {
-            const newCartItem: CartItem = {
-                ...item,
-                quantity: 1,
-                selectedSize: size
-            };
-            setCartItems([...cartItems, newCartItem]);
-        }
-    };
-
-    const handleUpdateQuantity = (index: number, quantity: number) => {
-        if (quantity <= 0) {
-            handleRemoveItem(index);
-            return;
-        }
-
-        const newCartItems = [...cartItems];
-        newCartItems[index].quantity = quantity;
-        setCartItems(newCartItems);
-    };
-
-    const handleRemoveItem = (index: number) => {
-        const newCartItems = cartItems.filter((_, i) => i !== index);
-        setCartItems(newCartItems);
-    };
-
-    /*    const getTotalCartItems = () => {
-           return cartItems.reduce((total, item) => total + item.quantity, 0);
-       }; */
-
-    return (
-        <div className="min-h-screen bg-gray-100">
-            <Header
-            /*   cartCount={getTotalCartItems()}
-              onCartClick={() => setIsCartOpen(true)} */
-            />
-
-            {/*    <CategoryFilter
-                categories={categories}
-                selectedCategory={selectedCategory}
-                onCategoryChange={handleCategoryChange}
-            /> */}
-
-            <DietaryFilters
-                filters={dietaryFilters}
-                onFilterChange={handleDietaryFilterChange}
-            />
-
-            {/*    <div className="py-6">
-                <ChefSuggestion
-                    suggestion={chefSuggestion}
-                    onAddToCart={handleAddToCart}
-                />
-            </div> */}
-
-            <div className="max-w-7xl mx-auto p-6">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-                    {selectedCategory === 'all' ? 'MENÚ COMPLETO' : selectedCategory.toUpperCase()}
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {filteredItems.map((item, index) => (
-                        <MenuComponent
-                            key={`${item["nombre largo"]}-${index}`}
-                            item={item}
-                            onAddToCart={handleAddToCart}
-                        />
-                    ))}
-                </div>
-            </div>
-
-            <Cart
-                isOpen={isCartOpen}
-                onClose={() => setIsCartOpen(false)}
-                items={cartItems}
-                onUpdateQuantity={handleUpdateQuantity}
-                onRemoveItem={handleRemoveItem}
-            />
-        </div>
+  // Filter items based on carta from URL and selected sub-category
+  const filteredItems = useMemo(() => {
+    return MenuKM5090.filter(
+      (item) =>
+        item.carta === decoded &&
+        (selectedCategory === "all" || item.clasificacion === selectedCategory),
     );
+  }, [selectedCategory, decoded]);
 
-}
+  // Logic to pick a chef suggestion (e.g., first item or a specific one)
+  const suggestionItem = useMemo(() => {
+    if (filteredItems.length === 0) return null;
+    // Try to find a 'premium' sounding item or just take one
+    return (
+      filteredItems.find((item) =>
+        item["nombre largo"].toLowerCase().includes("lomo"),
+      ) ||
+      filteredItems.find((item) =>
+        item["nombre largo"].toLowerCase().includes("salmon"),
+      ) ||
+      filteredItems[0]
+    );
+  }, [filteredItems]);
 
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+  };
 
+  return (
+    <div className="min-h-screen">
+      <Header />
 
+      <CategoryFilter
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onCategoryChange={handleCategoryChange}
+      />
 
-export default PageCard
+      {/* Menu Section */}
+      <section className="py-8 sm:py-12">
+        {/* Section Header */}
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-transparent to-[var(--gold-primary)]"></div>
+            <div className="w-2 h-2 rounded-full bg-[var(--red-accent)]"></div>
+            <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-[var(--gold-primary)]"></div>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 uppercase tracking-wider">
+            {decoded}
+          </h2>
+          <p className="text-white/50 text-sm sm:text-base">
+            {selectedCategory === "all"
+              ? "Descubrí nuestra selección gastronómica"
+              : selectedCategory.charAt(0).toUpperCase() +
+                selectedCategory.slice(1).toLowerCase()}
+          </p>
+        </div>
+
+        {/* Chef Suggestion Section */}
+        {suggestionItem && (
+          <div className="mb-12">
+            <ChefSuggestion suggestion={suggestionItem} />
+          </div>
+        )}
+
+        {/* Menu Grid - Responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+          {filteredItems.map((item, index) => (
+            <MenuComponent
+              key={`${item["nombre largo"]}-${index}`}
+              item={item}
+            />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default PageCard;

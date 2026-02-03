@@ -1,1560 +1,2146 @@
-/* Auto-generated (flat array) from 'carta km50 (1).xlsx'
-   Generated: 2025-08-18T16:17:23
-   This file exports an array of rows (no sheet wrapper).
-*/
-
-import type { MenuItem } from "../types";
-
+import type { MenuItem } from '../types/index';
 
 export const MenuKM5090: MenuItem[] = [
   {
-    "carta": "carta general",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "TOSTADO DE JAMON COCIDO Y QUESO EN PAN DE MIGA O PAN ARABE",
-    "monto": 6300.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "AGUA BENEDICTINO 600cc",
+    "monto": 2700.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "carta general",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "BAGUETIN CON JAMON CRUDO Y QUESO ",
-    "monto": 8000.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "AGUA CON GAS BENEDICTINO 600 cc",
+    "monto": 2700.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "carta general",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "HAMBURGUESA CON QUESO Y PAPAS FRITAS",
-    "monto": 8900.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "AGUA TÓNICA SCHWEPPES 310cc",
+    "monto": 2900.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "carta general",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "HAMBURGUESA VEGETARIANA CON LECHUGA Y TOMATE MAS PAPAS FRITAS",
-    "monto": 8900.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "AQUARIUS NARANJA",
+    "monto": 2700.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "carta general",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "SANDWICH DE BONDIOLA DESMECHADA CON PAPAS FRITAS",
-    "monto": 8900.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "AQUARIUS PERA 375 cc",
+    "monto": 2700.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "carta general",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "SANDWICH DE MILANESA CON LECHUGA Y TOMATE MAS PAPAS FRITAS",
-    "monto": 9900.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "AQUARIUS POMELO AMARILLO 375 cc",
+    "monto": 2700.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "carta general",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "LOMO CON QUESO Y TOMATE MAS PAPAS FRITAS",
-    "monto": 11900.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "AQUARIUS POMELO ROSADO 375cc",
+    "monto": 2700.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "carta general",
-    "clasificacion": "PARA PICAR",
-    "nombre largo": "EMPANADAS DE CARNE - JAMON Y QUESO - HUMITA- POLLO",
-    "monto": 1950.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "COCA COLA 375 cc",
+    "monto": 2900.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "carta general",
-    "clasificacion": "PARA PICAR",
-    "nombre largo": "PAPAS FRITAS",
-    "monto": 6400.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "COCA COLA ZERO 375 cc",
+    "monto": 2900.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "carta general",
-    "clasificacion": "PARA PICAR",
-    "nombre largo": "BASTONES DE MUZZARELLA CON POMODORO",
-    "monto": 8400.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "FANTA 375 cc",
+    "monto": 2900.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "carta general",
-    "clasificacion": "PARA PICAR",
-    "nombre largo": "PAPAS FRITAS CON CHEDDAR Y PANCETA",
-    "monto": 9900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "PARA PICAR",
-    "nombre largo": "RABAS ",
-    "monto": 12800.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "PARA PICAR",
-    "nombre largo": "LANGOSTINOS REBOZADOS",
-    "monto": 14500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "PARA PICAR",
-    "nombre largo": "PICADA DE QUESOS Y FIAMBRES: QUESO AZUL, HOLANDA, DAMBO, ROMANITO, BONDIOLA, JAMON CRUDO, COCIDO, SALAMIN, MORTADELA Y ACEITUNAS",
-    "monto": 21200.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "PARA PICAR",
-    "nombre largo": "PICADA KM50: MILANESA, RABAS, 2 EMPANADAS, SALCHICHITAS, PAPAS FRITAS, BASTONES DE MUZZARELLA",
-    "monto": 23000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "pizzas",
-    "nombre largo": "MUZZARELLA",
-    "monto": 12100.0,
-    "monto individual": 6500.0,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "pizzas",
-    "nombre largo": "MUZZARELLA Y HUEVO DURO",
-    "monto": 13500.0,
-    "monto individual": 7000.0,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "pizzas",
-    "nombre largo": "FUGAZZETA",
-    "monto": 13500.0,
-    "monto individual": 7000.0,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "pizzas",
-    "nombre largo": "NAPOLITANA",
-    "monto": 17300.0,
-    "monto individual": 9200.0,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "pizzas",
-    "nombre largo": "CALABRESA",
-    "monto": 17300.0,
-    "monto individual": 9200.0,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "pizzas",
-    "nombre largo": "JAMON COCIDO Y MORRONES",
-    "monto": 18000.0,
-    "monto individual": 9500.0,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "pizzas",
-    "nombre largo": "PANCETA Y CHAMPIGNONES",
-    "monto": 19900.0,
-    "monto individual": 9900.0,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "pizzas",
-    "nombre largo": "RUCULA, PARMESANO Y JAMON CRUDO",
-    "monto": 19900.0,
-    "monto individual": 9900.0,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "platos principales",
-    "nombre largo": "SALMON GRILLADO CON VEGETALES ",
-    "monto": 23200.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "platos principales",
-    "nombre largo": "LOMO AL CHAMPIGNON CON PAPAS NOISETTE",
-    "monto": 18000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "platos principales",
-    "nombre largo": "BIFE DE CHORIZO CON PAPAS FRITAS",
-    "monto": 18000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "platos principales",
-    "nombre largo": "MATAMBRITO A LA PIZZA CON PAPAS FRITAS",
-    "monto": 17000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "platos principales",
-    "nombre largo": "PECHUGA A LA PLANCHA CON ENSALADA MIXTA",
-    "monto": 13900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "platos principales",
-    "nombre largo": "POLLO AL VERDEO O AL CHAMPIGNON CON PAPAS NOISETTE",
-    "monto": 15500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "platos principales",
-    "nombre largo": "MILANESA CON PAPAS FRITAS A CABALLO",
-    "monto": 14600.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "platos principales",
-    "nombre largo": "MILANESA NAPOLITANA CON PAPAS FRITAS",
-    "monto": 15600.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "platos principales",
-    "nombre largo": "SUPREMA DE POLLO CON PAPAS FRITAS",
-    "monto": 14500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "platos principales",
-    "nombre largo": "SUPREMA DE POLLO NAPOLITANA CON PAPAS FRITAS",
-    "monto": 14900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "platos principales",
-    "nombre largo": "FILET DE MERLUZA A LA MILANESA CON PURE ",
-    "monto": 14500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "ENSALADAS Y TARTAS",
-    "nombre largo": "ENSALADA COMPLETA  (LECHUGA, TOMATE, CEBOLLA, RUCULA, ZANAHORIA, CHOCLO, QUESO Y ACEITUNAS)",
-    "monto": 9900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "ENSALADAS Y TARTAS",
-    "nombre largo": "ENSALADA DE ATUN  (ARROZ, LECHUGA, TOMATE, ZANAHORIA, CEBOLLA, HUEVO DURO Y ATUN)",
-    "monto": 12400.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "ENSALADAS Y TARTAS",
-    "nombre largo": "ENSALADA CAESAR CON POLLO (LECHUGA, CROUTONES, QUESO PARMESANO, SALSA CAESAR Y POLLO)",
-    "monto": 12100.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "ENSALADAS Y TARTAS",
-    "nombre largo": "ENSALADA CAESAR CON LANGOSTINOS (LECHUGA, CROUTONES, QUESO PARMESANO, SALSA CAESAR Y LANGOSTINOS)",
-    "monto": 14800.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "ENSALADAS Y TARTAS",
-    "nombre largo": "ENSALADA DE SALMON AHUMADO (RUCULA, PALTA, QUESO CREMA CON CIBOULETTE, SALMON AHUMADO)",
-    "monto": 17900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "ENSALADAS Y TARTAS",
-    "nombre largo": "TARTA DEL DIA CON ENSALADA A ELECCION (3 GUSTOS)",
-    "monto": 10900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "PASTAS",
-    "nombre largo": "RAVIOLES DE VERDURA ",
-    "monto": 14800.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "PASTAS",
-    "nombre largo": "SORRENTINOS DE JAMON Y QUESO",
-    "monto": 15900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "PASTAS",
-    "nombre largo": "SPAGHETTI ",
-    "monto": 13500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "carta general",
-    "clasificacion": "PASTAS",
-    "nombre largo": "ÑOQUIS",
-    "monto": 13500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "cafeteria",
-    "clasificacion": "POSTRES",
-    "nombre largo": "FLAN CASERO CON CREMA O DULCE DE LECHE",
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "JUGO DE NARANJA  500cc",
     "monto": 3800.0,
-    "monto individual": NaN,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
-    "clasificacion": "POSTRES",
-    "nombre largo": "HELADOS (AMERICANA, CHOCOLATE, DULCE DE LECHE, FRUTILLA)",
-    "monto": 4900.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "LIMONADA DE FRUTOS ROJOS 500 cc",
+    "monto": 4200.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
-    "clasificacion": "POSTRES",
-    "nombre largo": "ENSALADA DE FRUTAS",
-    "monto": 4900.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "LIMONADA MENTA Y JENGIBRE  1000 cc",
+    "monto": 6200.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
-    "clasificacion": "POSTRES",
-    "nombre largo": "CHOCOTORTA",
-    "monto": 5700.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "LIMONADA MENTA Y JENGIBRE 500 cc",
+    "monto": 3800.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
-    "clasificacion": "POSTRES",
-    "nombre largo": "TIRAMISU",
-    "monto": 5700.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "SPEED UNLIMITED 269cc",
+    "monto": 2800.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
-    "clasificacion": "POSTRES",
-    "nombre largo": "BROWNIE CON HELADO",
-    "monto": 7000.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "BEBIDAS SIN ALCOHOL",
+    "nombre largo": "SPRITE 375 cc",
+    "monto": 2900.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
-    "clasificacion": "POSTRES",
-    "nombre largo": "DON PEDRO",
-    "monto": 9000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "cafeteria",
-    "clasificacion": "POSTRES",
-    "nombre largo": "BANANA ROYAL 50  (HELADO 3 BOCHAS, BANANA, CREMA, SALSA DE CHOCOLATE, COOKIES)",
-    "monto": 8300.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "cafeteria",
+    "carta": "POSTRES & CAFÉ",
     "clasificacion": "CAFETERIA",
-    "nombre largo": "ALFAJORES CACHAFAZ",
-    "monto": 1850.0,
-    "monto individual": NaN,
+    "nombre largo": "ALFAJOR CACHAFAZ CHOCOLATE",
+    "monto": 2900.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
+    "carta": "POSTRES & CAFÉ",
     "clasificacion": "CAFETERIA",
-    "nombre largo": "CONITOS CACHAFAZ ",
-    "monto": 1750.0,
-    "monto individual": NaN,
+    "nombre largo": "ALFAJOR CACHAFAZ MAICENA",
+    "monto": 2900.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "ALFAJOR CACHAFAZ MOUSSE",
+    "monto": 2900.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "BUDIN PORCION",
+    "monto": 1000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "CAFE + MEDIALUNA (PERSONAL)",
+    "monto": 0.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "CAFE CAPUCCINO",
+    "monto": 4000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "CAFE CON LECHE",
+    "monto": 3500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "CAFE DOBLE / CAFE DOBLE CORTADO",
+    "monto": 3700.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "CAFE JARRITO / JARRITO CORTADO",
+    "monto": 2800.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "CAFE MOCCACCINO/ FRAPUCCINO FRIO",
+    "monto": 4000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "CAFE POCILLO / POCILLO CORTADO",
+    "monto": 2500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "LICUADO AL AGUA (PULPA)",
+    "monto": 4000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "LICUADO CON LECHE (PULPA)",
+    "monto": 4500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
     "clasificacion": "CAFETERIA",
     "nombre largo": "MEDIALUNAS",
-    "monto": 990.0,
-    "monto individual": NaN,
+    "monto": 1500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
+    "carta": "POSTRES & CAFÉ",
     "clasificacion": "CAFETERIA",
-    "nombre largo": "MEDIALUNAS CON JYQ ",
-    "monto": 2000.0,
-    "monto individual": NaN,
+    "nombre largo": "MEDIALUNAS CON JAMON Y QUESO",
+    "monto": 2800.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
+    "carta": "POSTRES & CAFÉ",
     "clasificacion": "CAFETERIA",
-    "nombre largo": "TOSTADO DE JAMON Y QUESO (PAN ARABE O PAN DE MIGA)",
-    "monto": 6300.0,
-    "monto individual": NaN,
+    "nombre largo": "MUFFINS / TULIPA",
+    "monto": 2200.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
+    "carta": "POSTRES & CAFÉ",
     "clasificacion": "CAFETERIA",
-    "nombre largo": "CAFÉ ",
-    "monto": 1700.0,
-    "monto individual": NaN,
+    "nombre largo": "pan",
+    "monto": 0.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
+    "carta": "POSTRES & CAFÉ",
     "clasificacion": "CAFETERIA",
-    "nombre largo": "CAFÉ EN JARRITO",
-    "monto": 1900.0,
-    "monto individual": NaN,
+    "nombre largo": "PROMO ^^LA LLAMA^^",
+    "monto": 9500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
-    "clasificacion": "CAFETERIA",
-    "nombre largo": "CAFÉ CON LECHE",
-    "monto": 2500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "cafeteria",
-    "clasificacion": "CAFETERIA",
-    "nombre largo": "CAPUCHINO",
-    "monto": 3000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "cafeteria",
+    "carta": "POSTRES & CAFÉ",
     "clasificacion": "CAFETERIA",
     "nombre largo": "SUBMARINO",
-    "monto": 3200.0,
-    "monto individual": NaN,
+    "monto": 4500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "cafeteria",
+    "carta": "POSTRES & CAFÉ",
     "clasificacion": "CAFETERIA",
-    "nombre largo": "TE",
-    "monto": 2000.0,
-    "monto individual": NaN,
+    "nombre largo": "TÉ",
+    "monto": 3500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "CERVEZAS TIRADAS",
-    "nombre largo": "PINTA HEINEKEN ",
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "TOSTADAS PORCION 3 UNIDADES",
     "monto": 3000.0,
-    "monto individual": NaN,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "CERVEZAS TIRADAS",
-    "nombre largo": "JARRA HEINEKEN  1L",
-    "monto": 5500.0,
-    "monto individual": NaN,
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "CAFETERIA",
+    "nombre largo": "UNTABLE UNIDAD",
+    "monto": 1500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "CERVEZAS",
-    "nombre largo": "SCHENEIDER 473",
-    "monto": 2300.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "CERVEZA",
+    "nombre largo": "Brahama",
+    "monto": 4500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "CERVEZAS ",
-    "nombre largo": "IMPERIAL 473",
-    "monto": 2400.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "CERVEZA",
+    "nombre largo": "CERV. BUDWEISER 473 cc",
+    "monto": 4500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "CERVEZAS ",
-    "nombre largo": "HEINEKEN SIN ALCOHOL",
-    "monto": 2500.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "CERVEZA",
+    "nombre largo": "CERV. BUDWEISER 710 CC",
+    "monto": 6100.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "CERVEZAS ",
-    "nombre largo": "HEINEKEN 473",
-    "monto": 2500.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "CERVEZA",
+    "nombre largo": "CERV. CORONA 330cc",
+    "monto": 4700.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "CERVEZAS ",
-    "nombre largo": "SOL PORRON 330",
-    "monto": 2600.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "CERVEZA",
+    "nombre largo": "CERV. CORONA 710cc",
+    "monto": 7500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "GIN TONIC ",
-    "monto": 5500.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "CERVEZA",
+    "nombre largo": "CERV. QUILMES 473 cc",
+    "monto": 4500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "GIN TONIC BOMBAY",
-    "monto": 7600.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "CERVEZA",
+    "nombre largo": "CERV. QUILMES 710 cc",
+    "monto": 6100.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "BAILEYS FROZEN ",
-    "monto": 6000.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "CERVEZA",
+    "nombre largo": "CERV. QUILMES STOUT 473cc",
+    "monto": 4500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "DAIQUIRI",
-    "monto": 6000.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "CERVEZA",
+    "nombre largo": "CERV. STELLA ARTOIS 473 cc",
+    "monto": 4700.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "GANCIA BATIDO",
-    "monto": 5500.0,
-    "monto individual": NaN,
+    "carta": "RESTAURANT",
+    "clasificacion": "CERVEZA",
+    "nombre largo": "CERV. TIRADA PINTA  500CC",
+    "monto": 4700.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "CAMPARI",
-    "monto": 5500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "CUBA LIBRE",
-    "monto": 5500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "FERNET CON COCA",
-    "monto": 5500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
     "nombre largo": "APEROL SPRITZ",
-    "monto": 5500.0,
-    "monto individual": NaN,
+    "monto": 8000.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "NEGRONI",
-    "monto": 5500.0,
-    "monto individual": NaN,
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "BAILEYS FROZEN",
+    "monto": 8500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "CAIPIRIÑA",
-    "monto": 5500.0,
-    "monto individual": NaN,
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "CAIPIRINHA",
+    "monto": 8000.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
     "nombre largo": "CAIPIROSKA",
-    "monto": 5500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "MOJITO",
-    "monto": 5500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "MARGARITA",
-    "monto": 5500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "TRAGOS",
-    "nombre largo": "WHISCOLA",
-    "monto": 5500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "WHISKY",
-    "nombre largo": "Jack Daniels",
-    "monto": 13200.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "WHISKY",
-    "nombre largo": "Johnnie Walker Black Label",
-    "monto": 13200.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "WHISKY",
-    "nombre largo": "Johnnie Walker Red Label",
-    "monto": 11000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "WHISKY",
-    "nombre largo": "J&B",
     "monto": 8000.0,
-    "monto individual": NaN,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "WHISKY",
-    "nombre largo": "BLENDERS",
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "CAMPARI ORANGE",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "CUBA LIBRE",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "CYNAR JULEP",
+    "monto": 6000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "DAIQUIRI",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "DESTORNILLADOR",
     "monto": 7000.0,
-    "monto individual": NaN,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "VINOS Y ESPUMANTES",
-    "nombre largo": "VINO POR COPA ",
-    "monto": 5700.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "VINOS Y ESPUMANTES",
-    "nombre largo": "AMAUTA ABSOLUTO MALBEC",
-    "monto": 12500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "VINOS Y ESPUMANTES",
-    "nombre largo": "AMAUTA ABSOLUTO TORRONTES",
-    "monto": 12500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "VINOS Y ESPUMANTES",
-    "nombre largo": "AMAUTA ABSOLUTO TORRONTES DULCE",
-    "monto": 12500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "VINOS Y ESPUMANTES",
-    "nombre largo": "CHANDON EXTRA BRUT 187cc",
-    "monto": 5000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "VINOS Y ESPUMANTES",
-    "nombre largo": "CHANDON DELICE ",
-    "monto": 22500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "VINOS Y ESPUMANTES",
-    "nombre largo": "CHANDON EXTRA BRUT",
-    "monto": 22500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "VINOS Y ESPUMANTES",
-    "nombre largo": "BARON B ",
-    "monto": 38500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "VINOS Y ESPUMANTES",
-    "nombre largo": "PHAROS EXTRA BRUT",
-    "monto": 80000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "BEBIDAS SIN ALCOHOL",
-    "nombre largo": "AGUA",
-    "monto": 1600.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "BEBIDAS SIN ALCOHOL",
-    "nombre largo": "GASEOSAS LATA",
-    "monto": 2400.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "BEBIDAS SIN ALCOHOL",
-    "nombre largo": "GASEOSAS BOTELLA",
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "Extra fruta",
     "monto": 2500.0,
-    "monto individual": NaN,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "BEBIDAS SIN ALCOHOL",
-    "nombre largo": "AGUA SABORIZADA",
-    "monto": 2400.0,
-    "monto individual": NaN,
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "FERNET 500 ML",
+    "monto": 8500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "BEBIDAS SIN ALCOHOL",
-    "nombre largo": "JUGO EXPRIMIDO DE NARANJA",
-    "monto": 3800.0,
-    "monto individual": NaN,
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "GANCIA BATIDO",
+    "monto": 8500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "bebidas y tragos",
-    "clasificacion": "BEBIDAS SIN ALCOHOL",
-    "nombre largo": "LIMONADA CON MENTA Y JENGIBRE ",
-    "monto": 2900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "BEBIDAS SIN ALCOHOL",
-    "nombre largo": "LIMONADA CON MENTA Y JENGIBRE X 1L",
-    "monto": 5000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "BEBIDAS SIN ALCOHOL",
-    "nombre largo": "SPEED",
-    "monto": 2400.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "BEBIDAS SIN ALCOHOL",
-    "nombre largo": "LICUADOS DE FRUTAS AL AGUA",
-    "monto": 4800.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "BEBIDAS SIN ALCOHOL",
-    "nombre largo": "LICUADOS DE FRUTAS CON LECHE",
-    "monto": 5300.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "CLERICO",
-    "nombre largo": "DE SIDRA",
-    "monto": 12000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "CLERICO",
-    "nombre largo": "DE VINO BLANCO DULCE",
-    "monto": 15000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "bebidas y tragos",
-    "clasificacion": "CLERICO",
-    "nombre largo": "DE ESPUMANTE",
-    "monto": 15000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "desayuno / merienda",
-    "clasificacion": "CLASICO",
-    "nombre largo": "3 MEDIALUNAS ",
-    "monto": 5500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "desayuno / merienda",
-    "clasificacion": "CLASICO",
-    "nombre largo": "CAFE O TE CON LECHE",
-    "monto": 5500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "desayuno / merienda",
-    "clasificacion": "CLASICO",
-    "nombre largo": "JUGO EXPRIMIDO DE NARANJAS",
-    "monto": 5500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "desayuno / merienda",
-    "clasificacion": "AVOCADO TOAST",
-    "nombre largo": "TOSTON CON PALTA, QUESO CREMA Y HUEVO ",
-    "monto": 9900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "desayuno / merienda",
-    "clasificacion": "AVOCADO TOAST",
-    "nombre largo": "CAFE O TE CON LECHE",
-    "monto": 9900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "desayuno / merienda",
-    "clasificacion": "AVOCADO TOAST",
-    "nombre largo": "JUGO EXPRIMIDO DE NARANJAS",
-    "monto": 9900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "desayuno / merienda",
-    "clasificacion": "CARLITOS",
-    "nombre largo": "TOSTADO DE JAMON Y QUESO EN PAN ARABE",
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "GANCIA CON SPRITE",
     "monto": 8000.0,
-    "monto individual": NaN,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "desayuno / merienda",
-    "clasificacion": "CARLITOS",
-    "nombre largo": "CAFE O TE CON LECHE",
-    "monto": 8000.0,
-    "monto individual": NaN,
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "ICE BAILEYS MOCCA",
+    "monto": 8500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "desayuno / merienda",
-    "clasificacion": "CARLITOS",
-    "nombre largo": "JUGO EXPRIMIDO DE NARANJAS",
-    "monto": 8000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "desayuno / merienda",
-    "clasificacion": "AMERICANO",
-    "nombre largo": "CAFÉ - CAFÉ CON LECHE -TE ",
-    "monto": 11000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "desayuno / merienda",
-    "clasificacion": "AMERICANO",
-    "nombre largo": "OMELETTE DE JYQ O HUEVOS REVUELTOS CON PANCETA",
-    "monto": 11000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "desayuno / merienda",
-    "clasificacion": "AMERICANO",
-    "nombre largo": "TOSTADAS",
-    "monto": 11000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "desayuno / merienda",
-    "clasificacion": "AMERICANO",
-    "nombre largo": "JUGO EXPRIMIDO DE NARANJAS",
-    "monto": 11000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu ejecutivo",
-    "clasificacion": "platos principales",
-    "nombre largo": "BIFE DE CHORIZO CON GUARNICION",
-    "monto": 15000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu ejecutivo",
-    "clasificacion": "platos principales",
-    "nombre largo": "TARTA DEL DIA CON ENSALADA",
-    "monto": 13000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu ejecutivo",
-    "clasificacion": "platos principales",
-    "nombre largo": "PECHUGA A LA PLANCHA CON GUARNICION",
-    "monto": 13000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu ejecutivo",
-    "clasificacion": "platos principales",
-    "nombre largo": "SPAGHETTI O ÑOQUIS CON SALSA A ELECCION",
-    "monto": 13000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu ejecutivo",
-    "clasificacion": "platos principales",
-    "nombre largo": "ENSALADA CAESAR CON POLLO",
-    "monto": 13000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu ejecutivo",
-    "clasificacion": "platos principales",
-    "nombre largo": "ENSALADA DE ATUN ",
-    "monto": 13000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu ejecutivo",
-    "clasificacion": "platos principales",
-    "nombre largo": "MILANESA DE TERNERA CON GUARNICION",
-    "monto": 13000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu ejecutivo",
-    "clasificacion": "platos principales",
-    "nombre largo": "SUPREMA DE POLLO CON GUARNICION",
-    "monto": 13000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu ejecutivo",
-    "clasificacion": "platos principales",
-    "nombre largo": "FILET DE MERLUZA A LA MILANESA CON GUARNICION",
-    "monto": NaN,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "TOSTADO DE JAMON COCIDO Y QUESO ",
-    "monto": 6300.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "HAMBURGUESA CON QUESO Y PAPAS FRITAS",
-    "monto": 8900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "HAMBURGUESA VEGETARIANA CON LECHUGA Y TOMATE MAS PAPAS FRITAS",
-    "monto": 8900.0,
-    "monto individual": NaN,
-    "apto vegano": "APTO VEGANO",
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "SANDWICH DE BONDIOLA DESMECHADA CON PAPAS FRITAS",
-    "monto": 8900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "SANDWICH DE MILANESA CON LECHUGA Y TOMATE MAS PAPAS FRITAS",
-    "monto": 9900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "SANDWICHES",
-    "nombre largo": "LOMO CON QUESO Y TOMATE MAS PAPAS FRITAS",
-    "monto": 11900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "PARA PICAR",
-    "nombre largo": "EMPANADAS DE CARNE - JAMON Y QUESO  (SACAR VERDURA)",
-    "monto": 1950.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "PARA PICAR",
-    "nombre largo": "PAPAS FRITAS",
-    "monto": 6400.0,
-    "monto individual": NaN,
-    "apto vegano": "APTO VEGANO",
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "PIZZAS",
-    "nombre largo": "MUZZARELLA",
-    "monto": 6500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "platos principales",
-    "nombre largo": "SALMON GRILLADO CON VEGETALES ",
-    "monto": 23200.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "platos principales",
-    "nombre largo": "LOMO AL CHAMPIGNON CON PAPAS NOISETTE",
-    "monto": 18000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "platos principales",
-    "nombre largo": "BIFE DE CHORIZO CON PAPAS FRITAS",
-    "monto": 18000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "platos principales",
-    "nombre largo": "MATAMBRITO A LA PIZZA CON PAPAS FRITAS",
-    "monto": 17000.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "platos principales",
-    "nombre largo": "PECHUGA A LA PLANCHA CON ENSALADA MIXTA",
-    "monto": 13900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "platos principales",
-    "nombre largo": "POLLO AL VERDEO O AL CHAMPIGNON CON PAPAS NOISETTE",
-    "monto": 15500.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "platos principales",
-    "nombre largo": "MILANESA CON PAPAS FRITAS A CABALLO",
-    "monto": 14600.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "platos principales",
-    "nombre largo": "MILANESA NAPOLITANA CON PAPAS FRITAS",
-    "monto": 15600.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "platos principales",
-    "nombre largo": "WOK DE VEGETALES ",
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "MARGARITA",
     "monto": 9000.0,
-    "monto individual": NaN,
-    "apto vegano": "APTO VEGANO",
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "platos principales",
-    "nombre largo": "WOK DE VEGETALES Y ARROZ ",
-    "monto": 9900.0,
-    "monto individual": NaN,
-    "apto vegano": "APTO VEGANO",
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "ENSALADAS ",
-    "nombre largo": "ENSALADA VEGAN  (LECHUGA, TOMATE, CEBOLLA, RUCULA, ZANAHORIA, ARVEJAS, CHOCLO, LENTEJAS)",
-    "monto": 9900.0,
-    "monto individual": NaN,
-    "apto vegano": "APTO VEGANO",
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "ENSALADAS ",
-    "nombre largo": "ENSALADA DE ATUN  (ARROZ, LECHUGA, TOMATE, ZANAHORIA, CEBOLLA, HUEVO DURO Y ATUN)",
-    "monto": 12400.0,
-    "monto individual": NaN,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "ENSALADAS ",
-    "nombre largo": "ENSALADA CAESAR CON POLLO (LECHUGA,CROUTONES SIN TACC, QUESO PARMESANO, SALSA CAESAR Y POLLO)",
-    "monto": 12100.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "ENSALADAS ",
-    "nombre largo": "ENSALADA CAESAR CON LANGOSTINOS (LECHUGA, QUESO PARMESANO, SALSA CAESAR Y LANGOSTINOS)",
-    "monto": 14800.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "ENSALADAS ",
-    "nombre largo": "ENSALADA DE SALMON AHUMADO (RUCULA, PALTA, QUESO CREMA CON CIBOULETTE, SALMON AHUMADO)",
-    "monto": 17900.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "POSTRES",
-    "nombre largo": "FLAN CASERO CON CREMA O DULCE DE LECHE",
-    "monto": 3800.0,
-    "monto individual": NaN,
-    "apto vegano": null,
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "POSTRES",
-    "nombre largo": "ENSALADA DE FRUTAS DE ESTACION",
-    "monto": 4900.0,
-    "monto individual": NaN,
-    "apto vegano": "APTO VEGANO",
-    "info producto": null
-  },
-  {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "POSTRES",
-    "nombre largo": "BROWNIE ",
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "MARTINI",
     "monto": 7000.0,
-    "monto individual": NaN,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "POSTRES",
-    "nombre largo": "ALFAJORES VEGANOS",
-    "monto": 1850.0,
-    "monto individual": NaN,
-    "apto vegano": "APTO VEGANO",
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "MOJITO",
+    "monto": 7000.0,
+    "monto individual": null,
+    "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "menu celiaco - veganos",
-    "clasificacion": "POSTRES",
-    "nombre largo": "LICUADOS DE FRUTAS CON LECHE DE ALMENDRAS",
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "MOJITO MALIBU",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "NEGRONI",
+    "monto": 7500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "OLD FASHIONED",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "SEX ON THE BEACH",
+    "monto": 7000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "TEQUILA JOSE CUERVO REPOSADO",
     "monto": 5500.0,
-    "monto individual": NaN,
-    "apto vegano": "APTO VEGANO",
-    "info producto": null
-  },
-  {
-    "carta": "menu combos - promociones",
-    "clasificacion": "combos",
-    "nombre largo": "TARTA DEL DIA CON ENSALADA + 1 BEBIDA ",
-    "monto": 11300.0,
-    "monto individual": NaN,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "menu combos - promociones",
-    "clasificacion": "combos",
-    "nombre largo": "3 EMPANADAS + 1 BEBIDA O CHOP HEINEKEN",
-    "monto": 7700.0,
-    "monto individual": NaN,
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "TIA MARIA COFFEE",
+    "monto": 3500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "menu combos - promociones",
-    "clasificacion": "combos",
-    "nombre largo": "BONDIOLA DESMECHADA BBQ Y PAPAS FRITAS + 1 BEBIDA O CHOPP HEINEKEN",
-    "monto": 10200.0,
-    "monto individual": NaN,
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "TIA MARIA CREAM",
+    "monto": 3500.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "menu combos - promociones",
-    "clasificacion": "combos",
-    "nombre largo": "HAMBURGUESA COMPLETA + 1 BEBIDA O CHOPP HEINEKEN",
-    "monto": 11000.0,
-    "monto individual": NaN,
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "VODKA ABSOLUT CON SPEED",
+    "monto": 9000.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "menu combos - promociones",
-    "clasificacion": "combos",
-    "nombre largo": "PAPAS CON CHEDDAR Y PANCETA + 2 CERVEZAS SOL",
-    "monto": 15000.0,
-    "monto individual": NaN,
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "VODKA CON SPEED",
+    "monto": 7000.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "menu combos - promociones",
-    "clasificacion": "combos",
-    "nombre largo": "RABAS + PAPAS FRITAS + 2 CHOPP DE HEINEKEN",
-    "monto": 21000.0,
-    "monto individual": NaN,
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "WHISKCOLA",
+    "monto": 8000.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "menu combos - promociones",
-    "clasificacion": "combos",
-    "nombre largo": "PICADA PARA 2 QUESOS Y FIAMBRES +  2 CHOPP DE HEINEKEN",
-    "monto": 23500.0,
-    "monto individual": NaN,
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "COCTELERIA",
+    "nombre largo": "ZOMBIE",
+    "monto": 8000.0,
+    "monto individual": null,
     "apto vegano": null,
     "info producto": null
   },
   {
-    "carta": "menu combos - promociones",
-    "clasificacion": "combos",
-    "nombre largo": "PICADA KM 50 + 2 CHOPP DE HEINEKEN",
-    "monto": 24500.0,
-    "monto individual": NaN,
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "ESPUMANTES",
+    "nombre largo": "BARON B 750 CC",
+    "monto": 46700.0,
+    "monto individual": null,
     "apto vegano": null,
-    "info producto": "MILANESA, RABAS, EMPANADAS, SALCHICHITAS, PAPAS FRITAS, BASTONES DE MUZZARELLA"
+    "info producto": null
   },
   {
-    "carta": "menu combos - promociones",
-    "clasificacion": "combos",
-    "nombre largo": "PIZZA GRANDE + 2 CHOPP DE HEINEKEN",
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "ESPUMANTES",
+    "nombre largo": "CHANDON + 2 SPEED",
+    "monto": 30500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "ESPUMANTES",
+    "nombre largo": "CHANDON 187 + 1 SPEDD",
+    "monto": 10500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "ESPUMANTES",
+    "nombre largo": "CHANDON 187cc",
+    "monto": 7500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "ESPUMANTES",
+    "nombre largo": "CHANDON 750 CC",
+    "monto": 25000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "ESPUMANTES",
+    "nombre largo": "MUMM 750 CC",
     "monto": 18000.0,
-    "monto individual": NaN,
+    "monto individual": null,
     "apto vegano": null,
-    "info producto": " NAPOLITANA  - JAMON Y MORRONES - CALABRESA - FUGAZZETA - MUZZARELLA Y HUEVO DURO"
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "ESPUMANTES",
+    "nombre largo": "REINASSANCE + 2 SPEED",
+    "monto": 18000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "ESPUMANTES",
+    "nombre largo": "REINASSANCE 750 CC",
+    "monto": 15000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "GIN",
+    "nombre largo": "GINTONIC B PINK",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "GIN",
+    "nombre largo": "GINTONIC BEEFEATER",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "GIN",
+    "nombre largo": "GINTONIC BOMBAY",
+    "monto": 9000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "GIN",
+    "nombre largo": "GINTONIC BRIGHTON",
+    "monto": 7000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "GIN",
+    "nombre largo": "GINTONIC BROKERS",
+    "monto": 7000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "GIN",
+    "nombre largo": "GINTONIC BULLDOG",
+    "monto": 7500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "GIN",
+    "nombre largo": "GINTONIC TANQUERAY",
+    "monto": 7000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "GIN",
+    "nombre largo": "GINTONIC TANQUERAY SEVILLA",
+    "monto": 7500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "PIZZA Y EMPANADA",
+    "nombre largo": "EMPANADAS  3 UNIDADES",
+    "monto": 4900.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "PIZZA Y EMPANADA",
+    "nombre largo": "EMPANADAS 6 UNIDADES",
+    "monto": 9400.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "PIZZA Y EMPANADA",
+    "nombre largo": "PIZZA 8 PORCIONES ESPECIAL/CALABRESA",
+    "monto": 16000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "PIZZA Y EMPANADA",
+    "nombre largo": "PIZZA 8 PORCIONES ESPECIAL/CRUDO Y RUCULA",
+    "monto": 16000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "PIZZA Y EMPANADA",
+    "nombre largo": "PIZZA 8 PORCIONES MUZZARELLA",
+    "monto": 12000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "PIZZA Y EMPANADA",
+    "nombre largo": "PIZZA ESPECIAL 8 PORCIONES/ROQUEFORT",
+    "monto": 12500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "PIZZA Y EMPANADA",
+    "nombre largo": "PIZZETA 4 PORCIONES ESPECIAL/ CRUDO Y RUCULA",
+    "monto": 8500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "PIZZA Y EMPANADA",
+    "nombre largo": "PIZZETA 4 PORCIONES ESPECIAL/CALABRESA",
+    "monto": 8500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "PIZZA Y EMPANADA",
+    "nombre largo": "PIZZETA 4 PORCIONES ESPECIAL/ROQUEFORT",
+    "monto": 6300.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "PIZZA Y EMPANADA",
+    "nombre largo": "PIZZETA 4 PORCIONES MOZZARELLA",
+    "monto": 5000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "POSTRE",
+    "nombre largo": "BOMBOM HELADO",
+    "monto": 3500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "POSTRES & CAFÉ",
+    "clasificacion": "POSTRE",
+    "nombre largo": "TARTA DULCE DEL DIA",
+    "monto": 5000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "\"Carlitos\" Cafe o te + MEDIO TOSTADO+ Vaso de jugo",
+    "monto": 7500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "2 LATAS CERV. BRAHAMA",
+    "monto": 7500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "2 LATAS CEV. QUILMES 473",
+    "monto": 7500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "2 PANCHOS CON PONCHO + 2 GASEOSAS",
+    "monto": 10000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "APEROL SPRITZ 2x1 Evento Maestro de la Barra",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "ARABE TERNERA QUESO TOMATE + GASEOSA",
+    "monto": 6900.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "ARABE TERNERA QUESO TOMATE + STELLA 473CC",
+    "monto": 8600.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "ARABE TERNERA QUESO TOMATE + TIRADA 500CC",
+    "monto": 8600.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "BAGUETE JAMON COCIDO + GASEOSA",
+    "monto": 6900.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "BAGUETTE JAMON COCIDO + STELLA 473 CC",
+    "monto": 8600.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "BAGUETTE JAMON COCIDO + TIRADA 500 CC",
+    "monto": 8600.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "BAGUETTE JAMON CRUDO +  GASEOSA",
+    "monto": 8100.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "BAGUETTE JAMON CRUDO + STELLA 473 CC",
+    "monto": 9900.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "CAFE CON LECHE + MUFFINS",
+    "monto": 4500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "CAIPIROSKA 2X1 - Evento Maestro de la Barra",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "CAMPARI ORANGE 2x1 Evento Maestro de la Barra",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "CUBA LIBRE 2x1 Evento Maestro de la Barra",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "DAIQUIRI 2X1",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "EMPANADAS 3 UNIDADES + GASEOSA",
+    "monto": 7400.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "EMPANADAS 3 UNIDS. + COPA VINO BLANCO AMAUTA TORRONTES 187 CC",
+    "monto": 8200.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "EMPANADAS 3 UNIDS. + COPA VINO TINTO AMAUTA MALBEC 187 CC",
+    "monto": 8200.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "EMPANADAS 3 UNIDS. + QUILMES 473 CC",
+    "monto": 8200.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "EMPANADAS 3 UNIDS. + TIRADA 500CC",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "EMPANADAS 6 UNIDADES + 1 GASEOSA",
+    "monto": 10900.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "EMPANADAS 6 UNIDS. + COPA VINO BLANCO AMAUTA TORRONTES 187 CC",
+    "monto": 12500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "EMPANADAS 6 UNIDS. + COPA VINO TINTO AMAUTA  MALBEC 187 CC",
+    "monto": 12500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "EMPANADAS 6 UNIDS. + QUILMES 473 CC",
+    "monto": 12500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "EMPANADAS 6 UNIDS. + TIRADA DE 500CC",
+    "monto": 12500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "HAPPY HOUR FERNET 500 ML 2DO. 50%",
+    "monto": 13000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "HAPPY HOUR GANCIA CON SPRITE",
+    "monto": 12000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "HAPPY HOUR STELLA 473CC 2DA. 50%",
+    "monto": 7100.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "HAPPY HOUR TIRADA 500CC 2DA. 50%",
+    "monto": 7100.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "PANCHO CON PONCHO + GASEOSA",
+    "monto": 7600.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "PANCHO CON PONCHO + QUILMES 473 CC",
+    "monto": 8300.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "PANCHO CON PONCHO + TIRADA 500CC",
+    "monto": 8300.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "PIZZA MUZZA 8 PORC.  + 2 TIRADAS 500CC",
+    "monto": 17900.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "PIZZA MUZZA 8 PORC. + 2 GASEOSAS",
+    "monto": 14900.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "PIZZETA 4PORC. + GASEOSA",
+    "monto": 7100.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "PIZZETA MUZZA 4 PORC. + TIRADA 500 CC",
+    "monto": 9400.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "PROMO \"CARLITOS\" (CAFE / TE + 1/2 MIGA JYQ + JUGO)",
+    "monto": 7500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "PROMO \"CLASICO\" (CAFE CON LECHE + 2 MEDIALUNAS + JUGO)",
+    "monto": 6000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "PROMO \"CRIOLLO\" (CAFE O TE + TOSTADOS Y UNTABLES + JUGO",
+    "monto": 5500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "Promo día del amigo",
+    "monto": 10000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "SUPER PANCHO CLASICO + GASEOSA",
+    "monto": 6400.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "SUPER PANCHO CLASICO + QUILMES 473 CC",
+    "monto": 7400.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "SUPER PANCHO CLASICO + TIRADA 500CC",
+    "monto": 7500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO",
+    "nombre largo": "VASO CASINO ALBERDI + CERVEZA TIRADA",
+    "monto": 7000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO JUEVES Y DOMINGO",
+    "nombre largo": "TABLA CALIENTE PARA 2 PERSONAS + 2 AGUAS SABORIZADAS",
+    "monto": 20000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO JUEVES Y DOMINGO",
+    "nombre largo": "TABLA CALIENTE PARA 2 PERSONAS + 2 GASEOSAS",
+    "monto": 20000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO JUEVES Y DOMINGO",
+    "nombre largo": "TABLA CALIENTE PARA 2 PERSONAS + 2 TIRADA",
+    "monto": 20000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZA 8 POR/CALABRESA + 2 GASEOSA",
+    "monto": 18000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZA 8 PORC/ CALABRESA + 2 TIRADA",
+    "monto": 18000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZA 8 PORC/ CRUDO Y RUCULA+ 2 GASEOSA",
+    "monto": 18000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZA 8 PORC/ MOZZARELLA+ 2 GASEOSA",
+    "monto": 14000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZA 8 PORC/ MOZZARELLA+ 2 TIRADAS",
+    "monto": 14000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZA 8 PORC/CALABRESA + 2 AGUAS SABORIZADAS",
+    "monto": 18000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZA 8 PORC/CRUDO Y RUCULA+ 2 AGUA SABORIZADA",
+    "monto": 18000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZA 8 PORC/CRUDO Y RUCULA+ 2 TIRADAS",
+    "monto": 18000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZA 8 PORC/MOZZARELLA+ 2 AGUAS SABORIZADAS",
+    "monto": 14000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZA 8 PORC/ROQUEFORT+ 2 AGUAS SABORIZADAS",
+    "monto": 18000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZA 8 PORC/ROQUEFORT+ 2 TIRADAS",
+    "monto": 18000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZA 8 PORC/ROQUEFORT+2 GASEOSA",
+    "monto": 18000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZETA CALABRESA + GASEOSA",
+    "monto": 9500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZETA CALABRESA + TIRADA",
+    "monto": 9500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZETA CALABRESA+ AGUA SABORIZADA",
+    "monto": 9500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZETA CRUDO Y RUCULA + GASEOSA",
+    "monto": 9500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZETA CRUDO Y RUCULA+ AGUA SABORIZADA",
+    "monto": 9500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZETA CRUDO Y RUCULA+ TIRADA",
+    "monto": 9500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZETA MOZZARELLA + AGUA SABORIZADA",
+    "monto": 7000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZETA MOZZARELLA + TIRADA",
+    "monto": 7000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZETA MOZZARELLA+ GASEOSA",
+    "monto": 7000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZETA ROQUEFORT+ AGUA SABORIZADA",
+    "monto": 9500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZETA ROQUEFORT+ GASEOSA",
+    "monto": 9500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO LUNES",
+    "nombre largo": "PIZZETA ROQUEFORT+ TIRADA",
+    "monto": 9500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MARTES",
+    "nombre largo": "PANCHO CLASICO + GASEOSA",
+    "monto": 4500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MARTES",
+    "nombre largo": "SUPER PANCHO CASICO + TIRADA",
+    "monto": 4500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MARTES",
+    "nombre largo": "SUPER PANCHO CLASICO + AGUA SABORIZADA",
+    "monto": 4500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MARTES",
+    "nombre largo": "SUPER PANCHO CON PONCHO + AGUA SABORIZADA",
+    "monto": 5500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MARTES",
+    "nombre largo": "SUPER PANCHO CON PONCHO + GASEOSA",
+    "monto": 5500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MARTES",
+    "nombre largo": "SUPER PANCHO CON PONCHO + TIRADA",
+    "monto": 5500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MIERCOLES",
+    "nombre largo": "EMPANADAS 3 + COPA DE VINO TINTO AMAUTA MALBEC 187",
+    "monto": 6500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MIERCOLES",
+    "nombre largo": "EMPANADAS 3 + COPA VINO BLANCO AMAUTA TORRONTES 187CC",
+    "monto": 6500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MIERCOLES",
+    "nombre largo": "EMPANADAS 3 + GASEOSA",
+    "monto": 5500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MIERCOLES",
+    "nombre largo": "EMPANADAS 3 + TIRADA",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MIERCOLES",
+    "nombre largo": "EMPANADAS 6 + 1 GASEOSA",
+    "monto": 10500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MIERCOLES",
+    "nombre largo": "EMPANADAS 6 + COPA DE VINI TINTO AMAUTA MALBEC 187",
+    "monto": 10500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MIERCOLES",
+    "nombre largo": "EMPANADAS 6 + COPA DE VINO BLANCO AMAUTA TORRONTES",
+    "monto": 10500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MIERCOLES",
+    "nombre largo": "EMPANADAS 6 + TIRADA",
+    "monto": 10500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MIERCOLES",
+    "nombre largo": "EMPANADAS 6 UNICADES + 1 AGUA SABORIZADA",
+    "monto": 10500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMO MIERCOLES",
+    "nombre largo": "EMPANDAS 3 + AGUA SABORIZADA",
+    "monto": 6500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMOCIONES",
+    "nombre largo": "MIGA +  GASEOSA 375",
+    "monto": 7500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMOCIONES",
+    "nombre largo": "MIGA + CAFÉ CON LECHE",
+    "monto": 7500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMOCIONES",
+    "nombre largo": "MIGA + LATA DE QUILMES 473",
+    "monto": 8500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "PROMOCIONES",
+    "clasificacion": "PROMOCIONES",
+    "nombre largo": "PROMO 2  CEV.QUILMES LATA",
+    "monto": 6000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SANDWICHERIA",
+    "nombre largo": "ARABE TERNERA QUESO TOMATE",
+    "monto": 4800.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SANDWICHERIA",
+    "nombre largo": "BAGUETTE JAMON COCIDO",
+    "monto": 4300.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SANDWICHERIA",
+    "nombre largo": "BAGUETTE JAMON CRUDO",
+    "monto": 5500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SANDWICHERIA",
+    "nombre largo": "MIGA 1/2 JAMON Y QUESO",
+    "monto": 3300.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SANDWICHERIA",
+    "nombre largo": "MIGA COMPLETO JAMON Y QUESO",
+    "monto": 5600.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SNACK",
+    "nombre largo": "CHIPA 2 UNIDADES",
+    "monto": 2400.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SNACK",
+    "nombre largo": "NUGGETS CON PAPAS FRITAS Y CHEDAR",
+    "monto": 9000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SNACK",
+    "nombre largo": "PANCHO CLASICO",
+    "monto": 4500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SNACK",
+    "nombre largo": "PAPAS FRITAS BASTON",
+    "monto": 4500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SNACK",
+    "nombre largo": "PAPAS FRITAS CON CHEDAR",
+    "monto": 5500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SNACK",
+    "nombre largo": "PICADA P/ 1",
+    "monto": 14000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SNACK",
+    "nombre largo": "PICADA P/ 2",
+    "monto": 28000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SNACK",
+    "nombre largo": "SNACK MANI 150 GR",
+    "monto": 2000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SNACK",
+    "nombre largo": "SNACK PAPAS FRITAS 150 GR",
+    "monto": 3000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SNACK",
+    "nombre largo": "SNACK PAPAS FRITAS 40 GR",
+    "monto": 1500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "RESTAURANT",
+    "clasificacion": "SNACK",
+    "nombre largo": "TABLA CALIENTE PARA DOS PERSONAS",
+    "monto": 20000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "AMAUTA CABERNET SAUVIGNON 750CC",
+    "monto": 12000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "AMAUTA MALBEC 750CC",
+    "monto": 12000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "AMAUTA MALBEC COPA 187 cc",
+    "monto": 4500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "AMAUTA TORRONTES 750CC",
+    "monto": 12000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "AMAUTA TORRONTES COPA 187 cc",
+    "monto": 4500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "DILEMA DULCE 750CC",
+    "monto": 12000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "LABORUM CABERNET SAUVIGNON 750CC",
+    "monto": 22500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "LABORUM MALBEC 750 CC",
+    "monto": 22500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "LABORUM TANNAT 750CC",
+    "monto": 22500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "LABORUM TORRONTES 750CC",
+    "monto": 19500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "LABOUM SYRAH 750CC",
+    "monto": 22500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "NEW AGE 750CC",
+    "monto": 10000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "VINOS",
+    "nombre largo": "ROSA ROSA 750CC",
+    "monto": 19500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "WISHKY",
+    "nombre largo": "CHIVAS REGAL",
+    "monto": 10000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "WISHKY",
+    "nombre largo": "GLENFIDDICH",
+    "monto": 18000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "WISHKY",
+    "nombre largo": "J&B",
+    "monto": 10000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "WISHKY",
+    "nombre largo": "JACK DANIELS HONEY",
+    "monto": 11000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "WISHKY",
+    "nombre largo": "JACK DANIELS TENESSE",
+    "monto": 10000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "WISHKY",
+    "nombre largo": "JHONNIE WALKER BLACK LABEL",
+    "monto": 9000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "WISHKY",
+    "nombre largo": "JHONNIE WALKER GREEN LABEL",
+    "monto": 18000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "WISHKY",
+    "nombre largo": "JOHNNIE WALKER DOBLE BLACK LABEL",
+    "monto": 10500.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "WISHKY",
+    "nombre largo": "JOHNNIE WALKER RED LABEL",
+    "monto": 9000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "WISHKY",
+    "nombre largo": "OLD PARR",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
+  },
+  {
+    "carta": "BEBIDAS PREMIUM",
+    "clasificacion": "WISHKY",
+    "nombre largo": "PREMIUN",
+    "monto": 8000.0,
+    "monto individual": null,
+    "apto vegano": null,
+    "info producto": null
   }
-] as const;
-
-export default MenuKM5090;
+];
