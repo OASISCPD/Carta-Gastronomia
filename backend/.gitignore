@@ -1,0 +1,16 @@
+#node js
+node_modules/
+#entorno
+.env
+
+#build
+dist/
+build/
+#logs
+.log
+
+#system 
+.DB_Store
+Thumbs.db
+
+credentials/

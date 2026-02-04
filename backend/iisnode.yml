@@ -1,0 +1,11 @@
+# Configuración adicional para iisnode
+node_env: production
+loggingEnabled: true
+debuggingEnabled: false
+watchedFiles: *.js
+nodeProcessCountPerApplication: 1
+maxConcurrentRequestsPerProcess: 1024
+maxNamedPipeConnectionRetry: 3
+namedPipeConnectionRetryDelay: 2000
+maxRequestBufferSize: 65536
+promoteServerVars: HTTP_X_FORWARDED_FOR,HTTP_X_FORWARDED_PROTO

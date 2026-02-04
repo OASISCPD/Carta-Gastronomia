@@ -1,0 +1,398 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Aforo-Minibus
+meta:
+  id: wrk_4c59cd219adc458db85897d204999149
+  created: 1767974766161
+  modified: 1768230125007
+  description: ""
+collection:
+  - name: trip
+    meta:
+      id: fld_5e8f9fb3e48b41c782e853dc53c219cf
+      created: 1768221711880
+      modified: 1768221714388
+      sortKey: -1768221711880
+      description: ""
+    children:
+      - url: http://localhost:3005/api/v1/trip/1
+        name: getVIaje
+        meta:
+          id: req_b8f803c680ab4149b5f63df9d8340193
+          created: 1767975214424
+          modified: 1768227337102
+          isPrivate: false
+          description: ""
+          sortKey: -1768226360423
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiQUxFWCBNQVhJTUlMSUFOTyIsImlhdCI6MTc2ODIxODQxOCwiZXhwIjoxNzY4MjIyMDE4fQ.ku1EyIJQNb1Ii1R2M2EmLZKGBet78po-KHRqMe1vXKw
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3005/api/v1/trip/usuarios/1/viajes
+        name: ultimos viajes por usuario
+        meta:
+          id: req_80e87077e5ed42e2a38f4928abe4c585
+          created: 1767975534042
+          modified: 1768228745672
+          isPrivate: false
+          description: ""
+          sortKey: -1768226360523
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiQUxFWCBNQVhJTUlMSUFOTyIsImlhdCI6MTc2ODIyNjQzNywiZXhwIjoxNzY4MjMwMDM3fQ.6GOzGNe_H_G5dcxjrFH_5ndJwL3EgnXT_Hl-RIr0l7M
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3005/api/v1/trip
+        name: create-trip
+        meta:
+          id: req_81351402bf684f73881cbc22b6c81fe4
+          created: 1768221722670
+          modified: 1768221931660
+          isPrivate: false
+          description: ""
+          sortKey: -1768221722670
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"capacidad":15, "codigo":"VJ-TEST02"}'
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiQUxFWCBNQVhJTUlMSUFOTyIsImlhdCI6MTc2ODIxOTc3NCwiZXhwIjoxNzY4MjIzMzc0fQ.jcX05g13QF3ZcrJ2QNaW-_XU9LShqlzmovNp2nwprik
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - name: Event-trip
+        meta:
+          id: fld_a842a4d96d12454db11af0b16d3a0a94
+          created: 1768226360323
+          modified: 1768228376337
+          sortKey: -1768226360323
+          description: ""
+        children:
+          - url: http://localhost:3005/api/v1/trip/2/events
+            name: create-sube
+            meta:
+              id: req_e070a63a73b247f8960522ad1140751a
+              created: 1768226378542
+              modified: 1768226592547
+              isPrivate: false
+              description: ""
+              sortKey: -1768226378542
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"tipo":"SUBE_PASAJERO","deltaPasajeros":1}'
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiQUxFWCBNQVhJTUlMSUFOTyIsImlhdCI6MTc2ODIyNjQzNywiZXhwIjoxNzY4MjMwMDM3fQ.6GOzGNe_H_G5dcxjrFH_5ndJwL3EgnXT_Hl-RIr0l7M
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3005/api/v1/trip/2/events
+            name: create-baja
+            meta:
+              id: req_008b65fe7ecf4b6cb63d5c4ff7b4d7e1
+              created: 1768226583161
+              modified: 1768226609167
+              isPrivate: false
+              description: ""
+              sortKey: -1768226583161
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"tipo":"BAJA_PASAJERO","deltaPasajeros":1}'
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiQUxFWCBNQVhJTUlMSUFOTyIsImlhdCI6MTc2ODIyNjQzNywiZXhwIjoxNzY4MjMwMDM3fQ.6GOzGNe_H_G5dcxjrFH_5ndJwL3EgnXT_Hl-RIr0l7M
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3005/api/v1/trip/2/events
+            name: create-cambio-direccion
+            meta:
+              id: req_7643231de54e43b68af7e065044cacca
+              created: 1768226733060
+              modified: 1768226790410
+              isPrivate: false
+              description: ""
+              sortKey: -1768226733060
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"tipo":"CAMBIO_DIRECCION","nota":"Comienza vuelta"}'
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiQUxFWCBNQVhJTUlMSUFOTyIsImlhdCI6MTc2ODIyNjQzNywiZXhwIjoxNzY4MjMwMDM3fQ.6GOzGNe_H_G5dcxjrFH_5ndJwL3EgnXT_Hl-RIr0l7M
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3005/api/v1/trip/2/events
+            name: create-finalizar-viaje
+            meta:
+              id: req_de726a906f8a4482946ec0ee6b5fb634
+              created: 1768226919688
+              modified: 1768226936696
+              isPrivate: false
+              description: ""
+              sortKey: -1768226919688
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"tipo":"FINALIZA_VIAJE","nota":"Viaje finalizado"}'
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiQUxFWCBNQVhJTUlMSUFOTyIsImlhdCI6MTc2ODIyNjQzNywiZXhwIjoxNzY4MjMwMDM3fQ.6GOzGNe_H_G5dcxjrFH_5ndJwL3EgnXT_Hl-RIr0l7M
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3005/api/v1/trip/2/events
+            name: craete-event-by-location
+            meta:
+              id: req_eabc6f29285a40008cb81d0c163679f2
+              created: 1768228332445
+              modified: 1768228401181
+              isPrivate: false
+              description: ""
+              sortKey: -1768228332445
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{     "tipo": "SUBE_PASAJERO",     "deltaPasajeros": 1,     "ubicacion":
+                {       "lat": -34.6037,       "lng": -58.3816     }   }'
+            headers:
+              - name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiQUxFWCBNQVhJTUlMSUFOTyIsImlhdCI6MTc2ODIyNjQzNywiZXhwIjoxNzY4MjMwMDM3fQ.6GOzGNe_H_G5dcxjrFH_5ndJwL3EgnXT_Hl-RIr0l7M
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - name: GET
+            meta:
+              id: fld_ec53240fda564e41ad927fb20df7d370
+              created: 1768227295684
+              modified: 1768227968962
+              sortKey: -1768226919888
+              description: ""
+            children:
+              - url: http://localhost:3005/api/v1/trip/2/eventos
+                name: getEventosporVIaje
+                meta:
+                  id: req_33604487ee38442b98b75e5a2198837d
+                  created: 1767974889160
+                  modified: 1768227301138
+                  isPrivate: false
+                  description: ""
+                  sortKey: -1768227301118
+                method: GET
+                headers:
+                  - name: User-Agent
+                    value: insomnia/12.2.0
+                    description: ""
+                    disabled: false
+                  - name: Authorization
+                    value: Bearer
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiQUxFWCBNQVhJTUlMSUFOTyIsImlhdCI6MTc2ODIyNjQzNywiZXhwIjoxNzY4MjMwMDM3fQ.6GOzGNe_H_G5dcxjrFH_5ndJwL3EgnXT_Hl-RIr0l7M
+                    description: ""
+                    disabled: false
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+  - name: USER
+    meta:
+      id: fld_cbde600127054d6da009a9ca066c2cf3
+      created: 1768227345653
+      modified: 1768227345653
+      sortKey: -1768227345653
+      description: ""
+    children:
+      - url: http://localhost:3005/api/v1/auth/logout
+        name: logout
+        meta:
+          id: req_6d7ab8a2cb8b4944a6297d7631070b66
+          created: 1767974766231
+          modified: 1768227350586
+          isPrivate: false
+          description: ""
+          sortKey: -1768227348858
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiQUxFWCBNQVhJTUlMSUFOTyIsImlhdCI6MTc2ODIxOTc3NCwiZXhwIjoxNzY4MjIzMzc0fQ.jcX05g13QF3ZcrJ2QNaW-_XU9LShqlzmovNp2nwprik
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3005/api/v1/auth/login
+        name: LOgin
+        meta:
+          id: req_694db8c9c2fc442bb13dc4b97e4b273c
+          created: 1767974822165
+          modified: 1768227348774
+          isPrivate: false
+          description: ""
+          sortKey: -1768227348758
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "usr": "13763",
+                "password": "13763"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3005/api/v1/trip/usuarios/1/permisos
+        name: verUsuarioPermiso
+        meta:
+          id: req_f6894400db6c48a7bc8c8fa20b40d0f0
+          created: 1767975319391
+          modified: 1768227363771
+          isPrivate: false
+          description: ""
+          sortKey: -1768227348958
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoiQUxFWCBNQVhJTUlMSUFOTyIsImlhdCI6MTc2Nzk3NDkzOCwiZXhwIjoxNzY3OTc4NTM4fQ.FZvxDSIhveo0ZVZ-HgLm2wkXCRfhVxc0rR8ay6wBDtc
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_f1c029112081682c240e270fbcc75d12f8d5f164
+    created: 1767974766165
+    modified: 1768219975102
+  cookies:
+    - id: c8101695-0a02-4e1b-afcc-c13bfe810668
+      key: token
+      value: ""
+      domain: localhost
+      path: /
+      secure: false
+      httpOnly: false
+      hostOnly: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_f1c029112081682c240e270fbcc75d12f8d5f164
+    created: 1767974766163
+    modified: 1767974766163
+    isPrivate: false
