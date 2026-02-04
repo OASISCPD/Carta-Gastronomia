@@ -12,7 +12,7 @@ function CorePage() {
         <div className="flex justify-center mb-8">
           <div className="w-20 h-20  rounded-full flex items-center justify-center">
             {/*   <span className="text-black font-bold text-2xl">BO</span> */}
-            <img src="/images/logo.pilar.png" alt="Logo Dominio" />
+            <img src="/images/logo.salta.png " alt="Logo Dominio" />
           </div>
         </div>
 
@@ -38,11 +38,11 @@ function CorePage() {
             className="relative h-48 md:h-56 rounded-lg overflow-hidden group cursor-pointer transform transition-transform duration-300 hover:scale-105"
           >
             <img
-              src="https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800"
               alt="Restaurant"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:via-black/10 transition-all duration-300"></div>
             <div className="absolute inset-0 flex items-end mb-8 justify-center">
               <div className="text-center">
                 <Utensils className="text-amber-400 w-6 h-6 mx-auto mb-2" />
@@ -60,11 +60,11 @@ function CorePage() {
             className="relative h-48 md:h-56 rounded-lg overflow-hidden group cursor-pointer transform transition-transform duration-300 hover:scale-105"
           >
             <img
-              src="https://images.pexels.com/photos/6963765/pexels-photo-6963765.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&w=800"
               alt="Promociones"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:via-black/10 transition-all duration-300"></div>
             <div className="absolute inset-0 flex items-end mb-8 justify-center">
               <div className="text-center">
                 <Tag className="text-amber-400 w-6 h-6 mx-auto mb-2" />
@@ -82,11 +82,11 @@ function CorePage() {
             className="relative h-48 md:h-56 rounded-lg overflow-hidden group cursor-pointer transform transition-transform duration-300 hover:scale-105"
           >
             <img
-              src="https://images.pexels.com/photos/8111357/pexels-photo-8111357.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="https://images.pexels.com/photos/1189257/pexels-photo-1189257.jpeg?auto=compress&cs=tinysrgb&w=800"
               alt="Bebidas Premium"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:via-black/10 transition-all duration-300"></div>
             <div className="absolute inset-0 flex items-end mb-8 justify-center">
               <div className="text-center">
                 <Wine className="text-amber-400 w-6 h-6 mx-auto mb-2" />
@@ -104,11 +104,11 @@ function CorePage() {
             className="relative h-48 md:h-56 rounded-lg overflow-hidden group cursor-pointer transform transition-transform duration-300 hover:scale-105"
           >
             <img
-              src="https://images.pexels.com/photos/6963676/pexels-photo-6963676.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=800"
               alt="Postres y Café"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:via-black/10 transition-all duration-300"></div>
             <div className="absolute inset-0 flex items-end mb-8 justify-center">
               <div className="text-center">
                 <Coffee className="text-amber-400 w-6 h-6 mx-auto mb-2" />
