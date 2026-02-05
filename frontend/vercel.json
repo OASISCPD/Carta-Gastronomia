@@ -1,14 +1,6 @@
 {
   "rewrites": [
-<<<<<<< HEAD
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "cleanUrls": true
-=======
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
->>>>>>> 99970a41ad76005baa08cb31c0844691ae2070ca
 }
