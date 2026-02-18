@@ -10,6 +10,7 @@ export interface Producto {
   costo: number;
   unidad_medida?: string | null;
   estado?: string;
+  url_image?: string | null;
 }
 
 export async function upsertProductoByIdOrKey(producto: Partial<Producto>): Promise<{ action: 'inserted' | 'updated'; id: string; affectedRows: number }> {
@@ -33,6 +34,7 @@ export async function upsertProductoByIdOrKey(producto: Partial<Producto>): Prom
       if (producto.costo !== undefined) { fields.push('costo = ?'); values.push(producto.costo); }
       if (producto.unidad_medida !== undefined) { fields.push('unidad_medida = ?'); values.push(producto.unidad_medida); }
       if (producto.estado !== undefined) { fields.push('estado = ?'); values.push(producto.estado); }
+      if (producto.url_image !== undefined) { fields.push('url_image = ?'); values.push(producto.url_image); }
       if (fields.length === 0) return { action: 'updated', id: producto.id!, affectedRows: 0 };
       values.push(producto.id);
       const [result] = await pool.query<ResultSetHeader>(`UPDATE productos SET ${fields.join(', ')} , updated_at = CURRENT_TIMESTAMP WHERE id = ?`, values);
@@ -52,6 +54,7 @@ export async function upsertProductoByIdOrKey(producto: Partial<Producto>): Prom
       if (producto.costo !== undefined) { fields.push('costo = ?'); values.push(producto.costo); }
       if (producto.unidad_medida !== undefined) { fields.push('unidad_medida = ?'); values.push(producto.unidad_medida); }
       if (producto.estado !== undefined) { fields.push('estado = ?'); values.push(producto.estado); }
+      if (producto.url_image !== undefined) { fields.push('url_image = ?'); values.push(producto.url_image); }
       if (fields.length === 0) return { action: 'updated', id: existingId, affectedRows: 0 };
       values.push(existingId);
       const [result] = await pool.query<ResultSetHeader>(`UPDATE productos SET ${fields.join(', ')} , updated_at = CURRENT_TIMESTAMP WHERE id = ?`, values);
@@ -63,7 +66,7 @@ export async function upsertProductoByIdOrKey(producto: Partial<Producto>): Prom
   // Generar id si no viene
   const id = producto.id || require('crypto').randomUUID();
   const [insertRes] = await pool.query<ResultSetHeader>(
-    `INSERT INTO productos (id, nombre, id_categoria, tipo, precio_venta, costo, unidad_medida, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    `INSERT INTO productos (id, nombre, id_categoria, tipo, precio_venta, costo, unidad_medida, estado, url_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
       id,
       producto.nombre || '',
@@ -73,6 +76,7 @@ export async function upsertProductoByIdOrKey(producto: Partial<Producto>): Prom
       producto.costo ?? 0,
       producto.unidad_medida ?? null,
       producto.estado ?? 'Activo',
+      producto.url_image ?? null,
     ]
   );
 
