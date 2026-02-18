@@ -4,6 +4,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import articulosRoutes from './routes/articulos.routes';
 import productosRoutes from './routes/productos.routes';
+import categoriasRoutes from './routes/categorias.routes';
 import { frontendAuthMiddleware } from './middleware/frontend.auth.middleware';
 import authRoutes from './routes/auth.routes';
 import { checkUserState } from './middleware/state.middleware';
@@ -39,6 +40,7 @@ app.use(cookieParser());
 app.use(`${API_PREFIX}/auth`, authRoutes);
 app.use(`${API_PREFIX}/articulos`, articulosRoutes);
 app.use(`${API_PREFIX}/productos`, productosRoutes);
+app.use(`${API_PREFIX}/categorias`, categoriasRoutes);
 
 
 // 📁 Servir archivos estáticos del frontend build (../frontend/dist)
