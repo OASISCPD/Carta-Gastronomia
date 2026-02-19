@@ -23,22 +23,22 @@ CREATE TABLE IF NOT EXISTS articulos (
     INDEX idx_articulo (articulo)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE productos (
-  id VARCHAR(36) PRIMARY KEY,
-  nombre VARCHAR(255) NOT NULL,
+-- menu_gastronomia.productos definition
 
-  id_categoria INT NOT NULL,
-  tipo VARCHAR(20) NOT NULL,
-
-  precio_venta DECIMAL(12,2) NOT NULL,
-  costo DECIMAL(12,2) NOT NULL,
-
-  unidad_medida VARCHAR(50),
-  estado VARCHAR(20) NOT NULL DEFAULT 'Activo',
-
-  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
+CREATE TABLE `productos` (
+  `id` varchar(36) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `id_categoria` int NOT NULL,
+  `tipo` varchar(20) NOT NULL,
+  `precio_venta` decimal(12,2) NOT NULL,
+  `costo` decimal(12,2) NOT NULL,
+  `unidad_medida` varchar(50) DEFAULT NULL,
+  `estado` varchar(20) NOT NULL DEFAULT 'Activo',
+  `url_image` varchar(500) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `permisos` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -73,6 +73,35 @@ CREATE TABLE `usuarios` (
   KEY `fk_permisos` (`permisos_id`),
   CONSTRAINT `fk_permisos` FOREIGN KEY (`permisos_id`) REFERENCES `permisos` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- menu_gastronomia.categorias_productos definition
+
+CREATE TABLE `categorias_productos` (
+  `id` varchar(36) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `display_order` int DEFAULT '0',
+  `estado` varchar(20) NOT NULL DEFAULT 'Activo',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Tabla de imágenes de productos subidas a Google Drive
+CREATE TABLE IF NOT EXISTS `imagenes_productos` (
+  `id`               bigint unsigned   NOT NULL AUTO_INCREMENT,
+  `producto_id`      varchar(36)       CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `file_id`          varchar(255)      NOT NULL,
+  `file_name`        varchar(500)      DEFAULT NULL,
+  `web_view_link`    varchar(1000)     DEFAULT NULL,
+  `web_content_link` varchar(1000)     DEFAULT NULL,
+  `direct_link`      varchar(1000)     DEFAULT NULL,
+  `created_at`       timestamp         NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  INDEX `idx_imagenes_producto_id` (`producto_id`),
+  CONSTRAINT `fk_imagenes_producto`
+    FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`)
+    ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 INSERT INTO permisos

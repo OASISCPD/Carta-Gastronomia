@@ -10,5 +10,8 @@ export const pool = mysql.createPool({
     waitForConnections: true,
     connectionLimit: config.db.connectionLimit,
     queueLimit: 0,
+    // Asegurar que la conexión use la zona horaria correcta.
+    // Puedes configurar DB_TIMEZONE en el .env (ej: "-03:00" o "Z" para UTC).
+    timezone: process.env.DB_TIMEZONE || '-03:00',
 });
 

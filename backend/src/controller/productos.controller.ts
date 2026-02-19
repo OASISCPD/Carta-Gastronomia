@@ -1,10 +1,12 @@
 import { Request, Response } from 'express';
 import { upsertProductoByIdOrKey } from '../services/productos.service';
 import { fetchProductos } from '../../scripts/productos/fetchProductos';
-import { insertProductoInSheet, updateProductoInSheet } from '../services/googleSheets.service';
+import { insertProductoInSheet, updateProductoInSheet, updateProductoImageUrl } from '../services/googleSheets.service';
 import { generateAppSheetId } from '../utils/idGenerator';
 import { getAllProductosService } from '../services/productos.list.service';
 import { uploadImageToDrive } from '../services/drive.service';
+import { insertImagenProducto } from '../services/imagenes_productos.service';
+import { pool } from '../config/db';
 
 /**
  * POST /api/v1/productos
@@ -157,6 +159,29 @@ export const uploadProductoImage = async (req: Request, res: Response) => {
     const filename = `producto_${id}_${Date.now()}.${ext}`;
 
     const result = await uploadImageToDrive(file.buffer, filename, file.mimetype);
+
+    // 1. Guardar registro en imagenes_productos
+    await insertImagenProducto({
+      producto_id:      id,
+      file_id:          result.fileId,
+      file_name:        result.fileName,
+      web_view_link:    result.webViewLink,
+      web_content_link: result.webContentLink,
+      direct_link:      result.directLink,
+    });
+
+    // 2. Actualizar url_image en la tabla productos
+    await pool.query(
+      `UPDATE productos SET url_image = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?`,
+      [result.directLink, id]
+    );
+
+    // 3. Actualizar url_imagen en Google Sheets (no falla la respuesta si el sheet falla)
+    try {
+      await updateProductoImageUrl(id, result.directLink);
+    } catch (sheetErr: any) {
+      console.warn('[UPLOAD IMAGE] No se pudo actualizar Google Sheets:', sheetErr?.message);
+    }
 
     return res.status(201).json({
       success: true,

@@ -43,6 +43,7 @@ export async function uploadImageToDrive(
 
   // Subir archivo
   const createRes = await drive.files.create({
+    supportsAllDrives: true,
     requestBody: {
       name: filename,
       mimeType,
@@ -59,6 +60,7 @@ export async function uploadImageToDrive(
 
   // Hacer el archivo públicamente legible (para usar el link como src de imagen)
   await drive.permissions.create({
+    supportsAllDrives: true,
     fileId,
     requestBody: { role: 'reader', type: 'anyone' },
   });
@@ -78,6 +80,6 @@ export async function uploadImageToDrive(
  */
 export async function deleteImageFromDrive(fileId: string): Promise<void> {
   const drive = await getDriveClient();
-  await drive.files.delete({ fileId });
+  await drive.files.delete({ fileId, supportsAllDrives: true });
   console.log(`🗑️ Archivo ${fileId} eliminado de Google Drive`);
 }
