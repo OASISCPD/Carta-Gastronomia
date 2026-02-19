@@ -72,17 +72,24 @@ const ChefSuggestion: React.FC<ChefSuggestionProps> = ({
                     <div
                       className="w-full h-full rounded-full overflow-hidden border border-white/50 cursor-zoom-in"
                       onClick={() =>
+                        suggestion.url_image &&
                         onImageClick?.(
-                          "https://images.pexels.com/photos/1516415/pexels-photo-1516415.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                          suggestion.url_image,
                           suggestion["nombre largo"],
                         )
                       }
                     >
-                      <ProgressiveImage
-                        src="https://images.pexels.com/photos/1516415/pexels-photo-1516415.jpeg?auto=compress&cs=tinysrgb&w=400"
-                        alt={suggestion["nombre largo"]}
-                        className="w-full h-full"
-                      />
+                      {suggestion.url_image ? (
+                        <ProgressiveImage
+                          src={suggestion.url_image}
+                          alt={suggestion["nombre largo"]}
+                          className="w-full h-full"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center">
+                          <Sparkles className="text-[var(--gold-primary)] w-8 h-8" />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

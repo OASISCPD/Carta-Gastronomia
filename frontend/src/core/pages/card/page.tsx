@@ -1,5 +1,4 @@
 import { useParams, type Params } from "react-router-dom";
-import { MenuKM5090 } from "../../utils/menu";
 import { useMemo, useState, useEffect } from "react";
 import Header from "../../test/Header.tsx";
 import CategoryFilter from "../../test/CategoryFilter.tsx";
@@ -12,6 +11,8 @@ import {
   MenuItemSkeleton,
   ChefSuggestionSkeleton,
 } from "../../components/Skeleton";
+import type { MenuItem } from "../../types";
+import { getProductos } from "../../../services/productos.service";
 
 const PageCard = () => {
   const { value } = useParams<Params>();
@@ -28,6 +29,8 @@ const PageCard = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   // Modal State
   const [modalState, setModalState] = useState({
@@ -40,35 +43,65 @@ const PageCard = () => {
     setModalState({ isOpen: true, src, alt });
   };
 
-  // Simulated loading effect
+  // Fetch products from the API
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 800);
-    return () => clearTimeout(timer);
-  }, [decoded]);
+    let cancelled = false;
 
-  // Get unique categories from the current carta
+    const fetchData = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const productos = await getProductos();
+        if (!cancelled) {
+          setMenuItems(productos);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setError(
+            err instanceof Error ? err.message : "Error al cargar productos",
+          );
+        }
+      } finally {
+        if (!cancelled) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    fetchData();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Filter items for the current carta
+  const itemsInCarta = useMemo(() => {
+    return menuItems.filter((item) => item.carta === decoded);
+  }, [menuItems, decoded]);
+
+  // Get unique categories (using clasificacion — all items already belong to this "carta")
   const categories = useMemo(() => {
-    const itemsInCarta = MenuKM5090.filter((item) => item.carta === decoded);
-    return Array.from(
+    // Since clasificacion = categoria_nombre, we show all unique categories for this carta
+    const allCategories = Array.from(
       new Set(itemsInCarta.map((item) => item.clasificacion)),
-    ).filter((c) => c !== "PROMO");
-  }, [decoded]);
+    ).sort();
+    return allCategories;
+  }, [itemsInCarta]);
 
-  // Filter items based on carta, selected category, and search query (accent-insensitive)
+  // Filter items based on selected category and search query
   const filteredItems = useMemo(() => {
     const normalizedQuery = normalizeString(searchQuery);
 
-    return MenuKM5090.filter((item) => {
-      const matchesCarta = item.carta === decoded;
+    return itemsInCarta.filter((item) => {
       const matchesCategory =
         selectedCategory === "all" || item.clasificacion === selectedCategory;
       const matchesSearch =
         normalizedQuery === "" ||
         normalizeString(item["nombre largo"]).includes(normalizedQuery);
 
-      return matchesCarta && matchesCategory && matchesSearch;
+      return matchesCategory && matchesSearch;
     });
-  }, [selectedCategory, decoded, searchQuery]);
+  }, [selectedCategory, itemsInCarta, searchQuery]);
 
   // Group filtered items by classification
   const groupedItems = useMemo(() => {
@@ -156,6 +189,17 @@ const PageCard = () => {
           </div>
         </div>
 
+        {/* Error State */}
+        {error && (
+          <div className="text-center py-20 px-6">
+            <div className="text-red-400 mb-4 text-6xl">⚠</div>
+            <h3 className="text-xl font-bold text-slate-800 mb-2">
+              Error al cargar el menú
+            </h3>
+            <p className="text-slate-500">{error}</p>
+          </div>
+        )}
+
         {/* Loading State Skeletons */}
         {isLoading ? (
           <div className="container mx-auto">
@@ -167,63 +211,65 @@ const PageCard = () => {
             </div>
           </div>
         ) : (
-          <>
-            {/* Chef Suggestion Section */}
-            {suggestionItem && selectedCategory === "all" && !searchQuery && (
-              <div className="mb-20">
-                <ChefSuggestion
-                  suggestion={suggestionItem}
-                  onImageClick={handleImageOpen}
-                />
-              </div>
-            )}
-
-            <div className="space-y-24">
-              {Object.entries(groupedItems).map(([category, items]) => (
-                <div key={category} className="category-section">
-                  {/* Category Sub-Header */}
-                  <div className="text-center mb-10">
-                    <div className="flex items-center justify-center gap-4 mb-3 opacity-60">
-                      <div className="w-8 sm:w-16 h-[1px] bg-gradient-to-r from-transparent to-[var(--gold-primary)]"></div>
-                      <div className="w-2 h-2 rounded-full bg-[var(--red-accent)]"></div>
-                      <div className="w-8 sm:w-16 h-[1px] bg-gradient-to-l from-transparent to-[var(--gold-primary)]"></div>
-                    </div>
-                    <h3
-                      className="text-xl sm:text-2xl font-bold text-[var(--gold-primary)] uppercase tracking-[0.25em]"
-                      style={{ fontFamily: "'Cinzel', serif" }}
-                    >
-                      {category}
-                    </h3>
-                  </div>
-
-                  {/* Menu Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 px-4">
-                    {items.map((item, index) => (
-                      <MenuComponent
-                        key={`${item["nombre largo"]}-${index}`}
-                        item={item}
-                        onImageClick={handleImageOpen}
-                      />
-                    ))}
-                  </div>
-                </div>
-              ))}
-
-              {filteredItems.length === 0 && (
-                <div className="text-center py-20 px-6">
-                  <div className="text-slate-300 mb-4 flex justify-center">
-                    <Search size={64} />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-2">
-                    No encontramos nada
-                  </h3>
-                  <p className="text-slate-500">
-                    Prueba ajustando tu búsqueda o filtros.
-                  </p>
+          !error && (
+            <>
+              {/* Chef Suggestion Section */}
+              {suggestionItem && selectedCategory === "all" && !searchQuery && (
+                <div className="mb-20">
+                  <ChefSuggestion
+                    suggestion={suggestionItem}
+                    onImageClick={handleImageOpen}
+                  />
                 </div>
               )}
-            </div>
-          </>
+
+              <div className="space-y-24">
+                {Object.entries(groupedItems).map(([category, items]) => (
+                  <div key={category} className="category-section">
+                    {/* Category Sub-Header */}
+                    <div className="text-center mb-10">
+                      <div className="flex items-center justify-center gap-4 mb-3 opacity-60">
+                        <div className="w-8 sm:w-16 h-[1px] bg-gradient-to-r from-transparent to-[var(--gold-primary)]"></div>
+                        <div className="w-2 h-2 rounded-full bg-[var(--red-accent)]"></div>
+                        <div className="w-8 sm:w-16 h-[1px] bg-gradient-to-l from-transparent to-[var(--gold-primary)]"></div>
+                      </div>
+                      <h3
+                        className="text-xl sm:text-2xl font-bold text-[var(--gold-primary)] uppercase tracking-[0.25em]"
+                        style={{ fontFamily: "'Cinzel', serif" }}
+                      >
+                        {category}
+                      </h3>
+                    </div>
+
+                    {/* Menu Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 px-4">
+                      {items.map((item, index) => (
+                        <MenuComponent
+                          key={`${item["nombre largo"]}-${index}`}
+                          item={item}
+                          onImageClick={handleImageOpen}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+
+                {filteredItems.length === 0 && (
+                  <div className="text-center py-20 px-6">
+                    <div className="text-slate-300 mb-4 flex justify-center">
+                      <Search size={64} />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-800 mb-2">
+                      No encontramos nada
+                    </h3>
+                    <p className="text-slate-500">
+                      Prueba ajustando tu búsqueda o filtros.
+                    </p>
+                  </div>
+                )}
+              </div>
+            </>
+          )
         )}
       </section>
 
