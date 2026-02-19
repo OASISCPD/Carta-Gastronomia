@@ -5,7 +5,7 @@ import { google } from 'googleapis';
 export interface ProductoSheetData {
   id: string;
   nombre: string;
-  id_categoria: number;
+  id_categoria: string | number;
   tipo: string;
   precio_venta: number;
   costo: number;

@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS articulos (
 CREATE TABLE `productos` (
   `id` varchar(36) NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `id_categoria` int NOT NULL,
+  `id_categoria` varchar(36) NOT NULL,
   `tipo` varchar(20) NOT NULL,
   `precio_venta` decimal(12,2) NOT NULL,
   `costo` decimal(12,2) NOT NULL,

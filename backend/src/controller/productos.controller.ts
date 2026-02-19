@@ -216,7 +216,7 @@ export const syncProductosFromSheet = async (req: Request, res: Response) => {
       const producto: any = {
         id: r.id || undefined,
         nombre: r.nombre || r.name || '',
-        id_categoria: r.id_categoria ? Number(r.id_categoria) : 0,
+        id_categoria: r.id_categoria != null ? String(r.id_categoria).trim() : '',
         tipo: r.tipo || 'Simple',
         precio_venta: r.precio_venta ?? 0,
         costo: r.costo ?? 0,
@@ -246,7 +246,7 @@ export const syncProductosFromJson = async (req: Request, res: Response) => {
       const producto: any = {
         id: r.id || undefined,
         nombre: r.nombre || r.name || '',
-        id_categoria: r.id_categoria ? Number(r.id_categoria) : 0,
+        id_categoria: r.id_categoria != null ? String(r.id_categoria).trim() : '',
         tipo: r.tipo || 'Simple',
         precio_venta: r.precio_venta ?? 0,
         costo: r.costo ?? 0,

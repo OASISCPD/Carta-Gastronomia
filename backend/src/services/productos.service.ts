@@ -4,21 +4,21 @@ import { RowDataPacket, ResultSetHeader } from 'mysql2';
 export interface Producto {
   id: string;
   nombre: string;
-  id_categoria: number;
+  id_categoria: string | number;
   tipo: string;
   precio_venta: number;
   costo: number;
   unidad_medida?: string | null;
   estado?: string;
   url_image?: string | null;
+  categoria_nombre?: string | null;
 }
 
 export async function upsertProductoByIdOrKey(producto: Partial<Producto>): Promise<{ action: 'inserted' | 'updated'; id: string; affectedRows: number }> {
-  // Normalizar id_categoria para evitar NaN en queries
-  const idCategoriaNorm = producto.id_categoria !== undefined && producto.id_categoria !== null
-    ? Number(producto.id_categoria)
+  // Preservar id_categoria tal como viene (puede ser número o string UUID)
+  const id_categoria = producto.id_categoria !== undefined && producto.id_categoria !== null
+    ? String(producto.id_categoria).trim()
     : undefined;
-  const id_categoria = Number.isNaN(idCategoriaNorm) ? 0 : idCategoriaNorm;
 
   // Si viene id, buscar por id; si no, intentar por nombre+id_categoria
   if (producto.id) {
@@ -70,7 +70,7 @@ export async function upsertProductoByIdOrKey(producto: Partial<Producto>): Prom
     [
       id,
       producto.nombre || '',
-      id_categoria ?? 0,
+      id_categoria ?? '',
       producto.tipo || 'Simple',
       producto.precio_venta ?? 0,
       producto.costo ?? 0,
