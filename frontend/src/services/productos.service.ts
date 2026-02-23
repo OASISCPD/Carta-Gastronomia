@@ -1,4 +1,5 @@
 import api from "./api";
+import dataMock from "../core/mock/data.mock";
 
 export interface BackendProducto {
   id: string;
@@ -106,10 +107,38 @@ export const getProductos = async (
 
       return cachedProductos;
     } catch (err) {
-      const error = err as { response?: { data?: { message?: string } } };
-      throw new Error(
-        error.response?.data?.message || "Error al obtener productos",
-      );
+      // If API request fails, try to use local mock data as a fallback
+      console.warn("getProductos: API request failed, using mock data", err);
+      try {
+        const fallback: BackendProducto[] = (dataMock && (dataMock as any).data) || [];
+        cachedProductos = fallback
+          .filter((item) => item.estado === "Activo")
+          .map((item) => {
+            const rawCat = item.categoria_nombre || "Sin categoría";
+            return {
+              carta: CARTA_MAPPING[rawCat] || "RESTAURANT",
+              clasificacion: rawCat,
+              "nombre largo": item.nombre,
+              monto:
+                typeof item.precio_venta === "string"
+                  ? parseFloat(item.precio_venta)
+                  : item.precio_venta,
+              "monto individual": null,
+              "apto vegano": null,
+              "info producto": null,
+              url_image: sanitizeDriveUrl(
+                item.url_image || item.URL_IMAGE || null,
+              ),
+            };
+          });
+
+        return cachedProductos;
+      } catch (innerErr) {
+        const error = err as { response?: { data?: { message?: string } } };
+        throw new Error(
+          error.response?.data?.message || "Error al obtener productos",
+        );
+      }
     } finally {
       fetchPromise = null;
     }
