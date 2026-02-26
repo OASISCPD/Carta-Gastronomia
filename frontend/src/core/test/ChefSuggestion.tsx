@@ -69,7 +69,7 @@ const ChefSuggestion: React.FC<ChefSuggestionProps> = ({
                 <div className="relative px-2">
                   <div className="absolute -inset-4 bg-amber-100/50 rounded-full blur-xl"></div>
                   <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-gradient-to-tr from-[var(--gold-dark)] via-[var(--gold-light)] to-[var(--gold-dark)]">
-                    <div
+                    <button
                       className="w-full h-full rounded-full overflow-hidden border border-white/50 cursor-zoom-in"
                       onClick={() =>
                         suggestion.url_image &&
@@ -78,9 +78,11 @@ const ChefSuggestion: React.FC<ChefSuggestionProps> = ({
                           suggestion["nombre largo"],
                         )
                       }
+                      type="button"
                     >
                       {suggestion.url_image ? (
                         <ProgressiveImage
+                          key={suggestion.url_image}
                           src={suggestion.url_image}
                           alt={suggestion["nombre largo"]}
                           className="w-full h-full"
@@ -90,7 +92,7 @@ const ChefSuggestion: React.FC<ChefSuggestionProps> = ({
                           <Sparkles className="text-[var(--gold-primary)] w-8 h-8" />
                         </div>
                       )}
-                    </div>
+                    </button>
                   </div>
                 </div>
 

@@ -1,5 +1,15 @@
 # React + TypeScript + Vite
 
+## Data source config
+
+The frontend supports switching product data source through env vars:
+
+- `VITE_DATA_SOURCE=api` (default behavior)
+- `VITE_DATA_SOURCE=mock`
+- `VITE_API_BASE_URL=http://localhost:3200/api/v1`
+
+Use `frontend/.env.example` as a base file.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

@@ -1,42 +1,64 @@
-import React, { useState, useEffect } from "react";
+import React, { useMemo, useState } from "react";
 
 interface ProgressiveImageProps {
   src: string;
   alt: string;
   className?: string;
-  placeholder?: string;
 }
+
+type LoadStage = "primary" | "fallback" | "failed";
+
+const extractDriveId = (url: string): string | null => {
+  const idMatch =
+    url.match(/[?&]id=([^&]+)/) ||
+    url.match(/\/d\/([^/]+)/) ||
+    url.match(/googleusercontent\.com\/d\/([^=/?]+)/);
+
+  return idMatch?.[1] ?? null;
+};
+
+const getAlternativeDriveUrl = (url: string): string | null => {
+  const id = extractDriveId(url);
+  if (!id) return null;
+  return `https://drive.google.com/thumbnail?id=${id}&sz=w1200`;
+};
 
 export const ProgressiveImage: React.FC<ProgressiveImageProps> = ({
   src,
   alt,
   className = "",
-  placeholder = "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=10",
 }) => {
-  const [imageSrc, setImageSrc] = useState(placeholder);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [stage, setStage] = useState<LoadStage>("primary");
+  const fallbackSrc = useMemo(() => getAlternativeDriveUrl(src), [src]);
 
-  useEffect(() => {
-    const img = new Image();
-    img.src = src;
-    img.onload = () => {
-      setImageSrc(src);
-      setIsLoaded(true);
-    };
-  }, [src]);
+  const currentSrc = stage === "primary" ? src : fallbackSrc;
+
+  const handleError = () => {
+    if (stage === "primary" && fallbackSrc && fallbackSrc !== src) {
+      setStage("fallback");
+      return;
+    }
+    setStage("failed");
+  };
+
+  if (stage === "failed" || !currentSrc) {
+    return (
+      <div className={`w-full h-full bg-slate-100 ${className}`} aria-label={alt}>
+        <div className="w-full h-full flex items-center justify-center text-slate-400 text-xs uppercase tracking-wider">
+          Sin imagen
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
       <img
-        src={imageSrc}
+        src={currentSrc}
         alt={alt}
-        className={`w-full h-full object-cover transition-all duration-700 ${
-          isLoaded ? "scale-100 blur-0" : "scale-110 blur-lg"
-        }`}
+        className="w-full h-full object-cover transition-transform duration-700"
+        onError={handleError}
       />
-      {!isLoaded && (
-        <div className="absolute inset-0 bg-slate-100/50 animate-pulse" />
-      )}
     </div>
   );
 };

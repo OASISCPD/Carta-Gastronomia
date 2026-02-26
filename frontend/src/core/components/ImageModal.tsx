@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { X } from "lucide-react";
 
 interface ImageModalProps {
@@ -14,6 +14,21 @@ export const ImageModal: React.FC<ImageModalProps> = ({
   src,
   alt,
 }) => {
+  const [stage, setStage] = useState<"primary" | "fallback" | "failed">(
+    "primary",
+  );
+
+  const fallbackSrc = useMemo(() => {
+    const idMatch =
+      src.match(/[?&]id=([^&]+)/) ||
+      src.match(/\/d\/([^/]+)/) ||
+      src.match(/googleusercontent\.com\/d\/([^=/?]+)/);
+    const id = idMatch?.[1];
+    return id ? `https://drive.google.com/thumbnail?id=${id}&sz=w1600` : null;
+  }, [src]);
+
+  const currentSrc = stage === "primary" ? src : fallbackSrc;
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -46,11 +61,24 @@ export const ImageModal: React.FC<ImageModalProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative group overflow-hidden rounded-3xl shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] border border-slate-200 bg-white">
-          <img
-            src={src}
-            alt={alt}
-            className="w-full h-full object-contain max-h-[80vh] bg-slate-50"
-          />
+          {stage === "failed" || !currentSrc ? (
+            <div className="w-[80vw] max-w-4xl h-[60vh] max-h-[80vh] bg-slate-50 flex items-center justify-center text-slate-400 text-sm uppercase tracking-wider">
+              Sin imagen disponible
+            </div>
+          ) : (
+            <img
+              src={currentSrc}
+              alt={alt}
+              className="w-full h-full object-contain max-h-[80vh] bg-slate-50"
+              onError={() => {
+                if (stage === "primary" && fallbackSrc && fallbackSrc !== src) {
+                  setStage("fallback");
+                  return;
+                }
+                setStage("failed");
+              }}
+            />
+          )}
           <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-slate-900/40 to-transparent">
             <h3 className="text-white font-bold text-xl drop-shadow-md">
               {alt}

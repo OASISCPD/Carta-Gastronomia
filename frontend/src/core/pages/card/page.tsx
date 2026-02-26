@@ -276,6 +276,7 @@ const PageCard = () => {
       <BackToTop />
 
       <ImageModal
+        key={modalState.src}
         isOpen={modalState.isOpen}
         onClose={() => setModalState((prev) => ({ ...prev, isOpen: false }))}
         src={modalState.src}

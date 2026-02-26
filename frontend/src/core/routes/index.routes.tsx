@@ -1,17 +1,21 @@
-import { Route, Routes } from "react-router-dom"
-import PageCard from "../pages/card/page"
-import RedirectModule from "../hook/RedirectComponent"
-import CorePage from "../pages/page"
-import { ContainerPages } from "../shared/ContainerPages"
+import { lazy, Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import { ContainerPages } from "../shared/ContainerPages";
+
+const PageCard = lazy(() => import("../pages/card/page"));
+const RedirectModule = lazy(() => import("../hook/RedirectComponent"));
+const CorePage = lazy(() => import("../pages/page"));
 
 export const RouterContainer = () => {
-    return (
-        <ContainerPages>
-            <Routes>
-                <Route path="/" element={<RedirectModule route="/home" />} />
-                <Route path="/home" element={<CorePage />} />
-                <Route path="/card/:value?" element={<PageCard />} />
-            </Routes>
-        </ContainerPages>
-    )
-}
+  return (
+    <ContainerPages>
+      <Suspense fallback={<div className="min-h-screen bg-[var(--bg-main)]" />}>
+        <Routes>
+          <Route path="/" element={<RedirectModule route="/home" />} />
+          <Route path="/home" element={<CorePage />} />
+          <Route path="/card/:value?" element={<PageCard />} />
+        </Routes>
+      </Suspense>
+    </ContainerPages>
+  );
+};

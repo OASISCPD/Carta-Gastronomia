@@ -13,6 +13,8 @@
   --text-muted: #64748b; /* Slate 500 */
   --white-soft: #ffffff;
   --white-muted: rgba(0, 0, 0, 0.4);
+  --black-soft: #e2e8f0;
+  --gray-medium: #94a3b8;
 
   /* Legacy brand colors */
   --brand-1: #ffff00;
@@ -84,18 +86,6 @@ h6 {
 
 .border-red {
   border-color: var(--red-accent);
-}
-
-.hover-gold-glow:hover {
-  border-color: rgba(184, 134, 11, 0.4);
-  box-shadow: 0 10px 30px rgba(184, 134, 11, 0.1);
-  transform: translateY(-4px);
-}
-
-.hover-gold-glow:hover {
-  border-color: rgba(212, 175, 55, 0.6);
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
-  transform: translateY(-4px);
 }
 
 .hover-gold-glow:hover {
