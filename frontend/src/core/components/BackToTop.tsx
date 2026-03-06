@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
 
 export const BackToTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when page is scrolled up to given distance
   const toggleVisibility = () => {
     if (window.pageYOffset > 500) {
       setIsVisible(true);
@@ -13,7 +12,6 @@ export const BackToTop: React.FC = () => {
     }
   };
 
-  // Set the top scroll behavior
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -22,7 +20,7 @@ export const BackToTop: React.FC = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
@@ -32,7 +30,7 @@ export const BackToTop: React.FC = () => {
     >
       <button
         onClick={scrollToTop}
-        className="bg-slate-900/90 backdrop-blur-md text-[var(--gold-primary)] p-3 rounded-full shadow-2xl border border-[var(--gold-primary)]/30 hover:bg-slate-800 hover:scale-110 active:scale-95 transition-all group"
+        className="bg-[var(--surface-2)]/95 backdrop-blur-md text-[var(--gold-primary)] p-3 rounded-full shadow-lg shadow-black/40 border border-[var(--line-subtle)] hover:bg-[var(--surface-3)] hover:border-[var(--line-accent)] hover:scale-110 active:scale-95 transition-all group"
         aria-label="Volver arriba"
       >
         <ChevronUp

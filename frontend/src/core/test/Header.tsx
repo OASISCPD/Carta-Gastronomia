@@ -3,29 +3,27 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="glass py-4 px-4 sm:px-6 relative z-30">
-      <div className="flex items-center justify-between max-w-7xl mx-auto">
-        <div className="flex items-center gap-4">
+    <header className="sticky top-0 z-50 h-[73px] px-4 sm:px-6 border-b border-[var(--line-subtle)] bg-[var(--surface-1)]/92 backdrop-blur-xl shadow-[0_6px_24px_rgba(0,0,0,0.35)]">
+      <div className="h-full max-w-7xl mx-auto grid grid-cols-[44px_1fr_44px] items-center">
+        <div>
           <Link
             to="/home"
-            className="p-2.5 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all duration-300 hover:border-[var(--gold-primary)]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-transparent border border-transparent text-[var(--text-muted)] transition-all duration-300 hover:text-[var(--gold-primary)] hover:bg-[var(--surface-2)]/50 hover:border-[var(--line-subtle)]"
+            aria-label="Volver al inicio"
           >
-            <ArrowLeft size={20} className="text-slate-600" />
+            <ArrowLeft size={18} />
           </Link>
-          <div className="flex flex-col">
-            <h1
-              className="text-2xl sm:text-3xl font-bold tracking-[0.1em] bg-gradient-to-r from-[var(--gold-light)] via-[var(--gold-primary)] to-[var(--gold-dark)] bg-clip-text text-transparent"
-              style={{ fontFamily: "'Cinzel', serif" }}
-            >
-              NCA
-            </h1>
-            <span className="text-[10px] sm:text-xs tracking-[0.3em] text-[var(--red-accent)] font-semibold uppercase">
-              Gastronomía
-            </span>
-          </div>
         </div>
 
-        {/* Decorative element */}
+        <div className="flex items-center justify-center pointer-events-none">
+          <img
+            src="/images/logo.salta.top.png"
+            alt="Logo Salta"
+            className="h-9 w-auto max-w-[70%] object-contain opacity-95"
+          />
+        </div>
+
+        <div aria-hidden="true" />
       </div>
     </header>
   );

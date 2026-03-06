@@ -1,22 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Playfair+Display:wght@400;500;600;700&family=Cinzel:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap");
 @import "tailwindcss";
 
 :root {
-  /* Premium Light Palette */
-  --gold-primary: #b8860b; /* Darker gold for light bg */
-  --gold-light: #d4af37;
-  --gold-dark: #8b6508;
-  --red-accent: #a40000;
-  --red-light: #c41e3a;
-  --bg-main: #f8fafc; /* Slate 50 */
-  --text-primary: #0f172a; /* Slate 900 */
-  --text-muted: #64748b; /* Slate 500 */
-  --white-soft: #ffffff;
-  --white-muted: rgba(0, 0, 0, 0.4);
-  --black-soft: #e2e8f0;
-  --gray-medium: #94a3b8;
+  --gold-primary: #ccac33;
+  --gold-light: #c352f7;
+  --gold-dark: #9318c4;
+  --red-accent: #9318c4;
+  --red-light: #c352f7;
+  --bg-main: #0b0b0c;
+  --text-primary: #f6f2ff;
+  --text-muted: #b6adcf;
+  --white-soft: #17171b;
+  --white-muted: rgba(246, 242, 255, 0.4);
+  --black-soft: #0f0f12;
+  --gray-medium: #393943;
+  --accent-gold: #ccac33;
+  --accent-violet: #9318c4;
+  --accent-fuchsia: #c352f7;
+  --surface-1: #101014;
+  --surface-2: #16161c;
+  --surface-3: #1f1f28;
+  --line-subtle: rgba(255, 255, 255, 0.1);
+  --line-accent: rgba(204, 172, 51, 0.35);
+  --state-error-bg: rgba(127, 29, 29, 0.85);
+  --state-error-border: rgba(220, 38, 38, 1);
+  --state-error-text: #ffffff;
 
-  /* Legacy brand colors */
   --brand-1: #ffff00;
   --brand-2: #ffd600;
   --brand-3: #f1aa1d;
@@ -25,9 +34,44 @@
 
 /* Typography */
 body {
-  font-family: "Montserrat", sans-serif;
-  background-color: var(--bg-main);
+  font-family: "Open Sans", sans-serif;
+  background:
+    radial-gradient(circle at 82% -12%, rgba(195, 82, 247, 0.14) 0%, rgba(195, 82, 247, 0) 44%),
+    radial-gradient(circle at 14% -10%, rgba(204, 172, 51, 0.1) 0%, rgba(204, 172, 51, 0) 42%),
+    linear-gradient(180deg, #0b0b0c 0%, #0f1014 52%, #0b0b0c 100%);
   color: var(--text-primary);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at 50% 15%, black 24%, transparent 78%);
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.06) 0.4px,
+    transparent 0.4px
+  );
+  background-size: 3px 3px;
+  opacity: 0.24;
+  z-index: -1;
 }
 
 h1,
@@ -36,23 +80,31 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Cinzel", serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+}
+
+p,
+span,
+label,
+small {
+  font-weight: 600;
 }
 
 /* Custom Utilities */
 .glass {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(25, 22, 30, 0.68);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  border: 1px solid rgba(195, 82, 247, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
 }
 
 .glass-dark {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(18, 18, 18, 0.9);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(204, 172, 51, 0.25);
 }
 
 .text-gold {
@@ -88,9 +140,35 @@ h6 {
   border-color: var(--red-accent);
 }
 
+/* Legacy animated dark background (unused in light theme) */
+@keyframes nightVeil {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-night-veil {
+  background: linear-gradient(
+    -45deg,
+    #050505,
+    #0a0a0a,
+    #130f1a,
+    #0a0a0a,
+    #050505
+  );
+  background-size: 400% 400%;
+  animation: nightVeil 15s ease infinite;
+}
+
 .hover-gold-glow:hover {
-  border-color: rgba(212, 175, 55, 0.6);
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+  border-color: rgba(204, 172, 51, 0.7);
+  box-shadow: 0 0 25px rgba(195, 82, 247, 0.25);
   transform: translateY(-4px);
 }
 
@@ -112,6 +190,11 @@ h6 {
 
 .animate-gold-breathing {
   animation: goldBreathing 3s ease-in-out infinite;
+}
+
+::selection {
+  background: rgba(195, 82, 247, 0.4);
+  color: #fff4c0;
 }
 
 /* Smooth scrollbar */
