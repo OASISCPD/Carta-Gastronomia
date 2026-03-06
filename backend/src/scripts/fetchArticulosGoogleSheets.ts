@@ -80,8 +80,8 @@ async function fetchArticulos() {
     return [];
   }
 
-  const headers = rows[0].map((h) => (h ? h.toString().trim() : ''));
-  const keys = headers.map((h) => keyFromHeader(h || 'col'));
+  const headers = rows[0].map((h: any) => (h ? h.toString().trim() : ''));
+  const keys = headers.map((h: string) => keyFromHeader(h || 'col'));
 
   const data: RowObject[] = [];
   for (let i = 1; i < rows.length; i++) {
