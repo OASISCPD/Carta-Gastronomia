@@ -3,7 +3,7 @@ interface ContainerPagesProps {
 }
 export const ContainerPages: React.FC<ContainerPagesProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-[var(--bg-main)] text-[var(--text-primary)] antialiased">
+    <div className="app-dvh min-h-screen bg-[var(--bg-main)] text-[var(--text-primary)] antialiased">
       <div className="w-full">
         {children}
       </div>

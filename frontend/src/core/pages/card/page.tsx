@@ -1,12 +1,15 @@
-﻿import { useParams, type Params } from "react-router-dom";
-import { useEffect, useMemo, useReducer, useRef, useState } from "react";
+import { useLocation, useParams, type Params } from "react-router-dom";
+import { useEffect, useMemo, useReducer, useRef } from "react";
+import { Search, WifiOff, X } from "lucide-react";
 import Header from "../../test/Header.tsx";
 import CategoryFilter from "../../test/CategoryFilter.tsx";
 import { MenuComponent } from "../../test/MenuItem.tsx";
 import { BackToTop } from "../../components/BackToTop.tsx";
-import { Search, X } from "lucide-react";
 import type { MenuItem } from "../../types";
 import { getArticulos } from "../../../services/articulos.service";
+import { LoaderPageDomain, useGlobalLoader } from "../../shared/Loaders.tsx";
+import { reportMetric } from "../../utils/metrics";
+import { resolveCartaFromRoute } from "../../utils/cartaSlug";
 import {
   sortCategoriesForCarta,
   sortItemsForCarta,
@@ -19,19 +22,39 @@ const normalizeText = (value: string): string => {
     .replace(/[\u0300-\u036f]/g, "");
 };
 
+interface PageCardLocationState {
+  loaderPrimed?: boolean;
+  loaderStartedAt?: number;
+}
+
 interface PageCardState {
   menuItems: MenuItem[];
   error: string | null;
+  selectedCategory: string;
+  searchQuery: string;
+  isInitialLoading: boolean;
+  reloadCounter: number;
+  isOffline: boolean;
 }
 
 type PageCardAction =
   | { type: "load_success"; payload: MenuItem[] }
-  | { type: "load_error"; payload: string };
+  | { type: "load_error"; payload: string }
+  | { type: "set_category"; payload: string }
+  | { type: "set_query"; payload: string }
+  | { type: "clear_filters" }
+  | { type: "retry_load" }
+  | { type: "set_offline"; payload: boolean };
 
-const initialState: PageCardState = {
+const getInitialState = (): PageCardState => ({
   menuItems: [],
   error: null,
-};
+  selectedCategory: "all",
+  searchQuery: "",
+  isInitialLoading: true,
+  reloadCounter: 0,
+  isOffline: typeof navigator !== "undefined" ? !navigator.onLine : false,
+});
 
 const pageCardReducer = (
   state: PageCardState,
@@ -39,9 +62,34 @@ const pageCardReducer = (
 ): PageCardState => {
   switch (action.type) {
     case "load_success":
-      return { menuItems: action.payload, error: null };
+      return {
+        ...state,
+        menuItems: action.payload,
+        error: null,
+        isInitialLoading: false,
+      };
     case "load_error":
-      return { menuItems: [], error: action.payload };
+      return {
+        ...state,
+        menuItems: [],
+        error: action.payload,
+        isInitialLoading: false,
+      };
+    case "set_category":
+      return { ...state, selectedCategory: action.payload };
+    case "set_query":
+      return { ...state, searchQuery: action.payload };
+    case "clear_filters":
+      return { ...state, selectedCategory: "all", searchQuery: "" };
+    case "retry_load":
+      return {
+        ...state,
+        isInitialLoading: true,
+        error: null,
+        reloadCounter: state.reloadCounter + 1,
+      };
+    case "set_offline":
+      return { ...state, isOffline: action.payload };
     default:
       return state;
   }
@@ -90,34 +138,74 @@ const scrollToTop = (origin: HTMLElement | null) => {
 
 const PageCard = () => {
   const { value } = useParams<Params>();
-  const decoded = value ? decodeURIComponent(value) : undefined;
+  const location = useLocation();
+  const decoded = resolveCartaFromRoute(value);
+  const locationState = location.state as PageCardLocationState | null;
 
   const filterBarRef = useRef<HTMLDivElement | null>(null);
-  const menuSectionRef = useRef<HTMLElement | null>(null);
-  const unlockHeightTimeoutRef = useRef<number | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [lockedSectionHeight, setLockedSectionHeight] = useState<number | null>(null);
-  const [{ menuItems, error }, dispatch] = useReducer(
-    pageCardReducer,
-    initialState,
-  );
+  const [
+    {
+      menuItems,
+      error,
+      selectedCategory,
+      searchQuery,
+      isInitialLoading,
+      reloadCounter,
+      isOffline,
+    },
+    dispatch,
+  ] = useReducer(pageCardReducer, undefined, getInitialState);
+  const { hideLoader, showLoader } = useGlobalLoader();
+
+  useEffect(() => {
+    const handleOnline = () => dispatch({ type: "set_offline", payload: false });
+    const handleOffline = () => dispatch({ type: "set_offline", payload: true });
+
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
+    const shouldShowLoader = !locationState?.loaderPrimed || reloadCounter > 0;
+    const loaderStartedAt = locationState?.loaderStartedAt ?? Date.now();
+    const startedAt = performance.now();
 
     const fetchArticulos = async () => {
+      if (shouldShowLoader) {
+        showLoader();
+      }
+
       try {
         const mapped = await getArticulos();
+        const elapsed = Date.now() - loaderStartedAt;
+        const remaining = Math.max(0, 500 - elapsed);
+
+        if (remaining > 0) {
+          await new Promise((resolve) => window.setTimeout(resolve, remaining));
+        }
 
         if (!cancelled) {
           dispatch({ type: "load_success", payload: mapped });
+          reportMetric("card_data_ready_ms", Math.round(performance.now() - startedAt), {
+            carta: decoded ?? "unknown",
+            retry: reloadCounter,
+          });
         }
       } catch (err) {
         if (!cancelled) {
           const message =
             err instanceof Error ? err.message : "Error al cargar articulos";
           dispatch({ type: "load_error", payload: message });
+          reportMetric("card_data_error", message);
+        }
+      } finally {
+        if (!cancelled) {
+          hideLoader();
         }
       }
     };
@@ -126,10 +214,19 @@ const PageCard = () => {
 
     return () => {
       cancelled = true;
+      if (shouldShowLoader) {
+        hideLoader();
+      }
     };
-  }, []);
+  }, [
+    decoded,
+    hideLoader,
+    locationState?.loaderPrimed,
+    locationState?.loaderStartedAt,
+    reloadCounter,
+    showLoader,
+  ]);
 
-  // Get unique categories from the current carta
   const categories = useMemo(() => {
     const itemsInCarta = menuItems.filter((item) => item.carta === decoded);
     const uniqueCategories = Array.from(
@@ -139,7 +236,6 @@ const PageCard = () => {
     return sortCategoriesForCarta(decoded, uniqueCategories);
   }, [decoded, menuItems]);
 
-  // Filter items based on carta from URL and selected sub-category
   const filteredItems = useMemo(() => {
     const normalizedQuery = normalizeText(searchQuery.trim());
     const filtered = menuItems.filter(
@@ -153,49 +249,26 @@ const PageCard = () => {
     return sortItemsForCarta(decoded, filtered);
   }, [selectedCategory, decoded, menuItems, searchQuery]);
 
-  useEffect(() => {
-    return () => {
-      if (unlockHeightTimeoutRef.current) {
-        window.clearTimeout(unlockHeightTimeoutRef.current);
-      }
-    };
-  }, []);
-
   const handleCategoryChange = (category: string) => {
     const categoryChanged = category !== selectedCategory;
-
-    if (unlockHeightTimeoutRef.current) {
-      window.clearTimeout(unlockHeightTimeoutRef.current);
-      unlockHeightTimeoutRef.current = null;
-    }
-
-    if (categoryChanged && menuSectionRef.current) {
-      setLockedSectionHeight(menuSectionRef.current.offsetHeight);
-    }
 
     requestAnimationFrame(() => {
       scrollToTop(filterBarRef.current);
     });
 
     if (categoryChanged) {
-      setSelectedCategory(category);
-      unlockHeightTimeoutRef.current = window.setTimeout(() => {
-        setLockedSectionHeight(null);
-        unlockHeightTimeoutRef.current = null;
-      }, 320);
-      return;
+      dispatch({ type: "set_category", payload: category });
     }
-
-    setLockedSectionHeight(null);
   };
 
   const hasActiveFilters =
     selectedCategory !== "all" || searchQuery.trim().length > 0;
 
-  const clearFilters = () => {
-    setSelectedCategory("all");
-    setSearchQuery("");
+  const retryLoad = () => {
+    dispatch({ type: "retry_load" });
   };
+
+  if (isInitialLoading) return <LoaderPageDomain visible />;
 
   return (
     <div className="min-h-screen bg-[var(--bg-main)] text-[var(--text-primary)]">
@@ -203,9 +276,9 @@ const PageCard = () => {
 
       <div
         ref={filterBarRef}
-        className="sticky top-[73px] z-40 w-full bg-[var(--surface-1)]/92 backdrop-blur-xl border-b border-[var(--line-subtle)] shadow-sm shadow-black/30"
+        className="sticky top-[73px] z-40 w-full border-b border-[var(--line-subtle)] bg-[var(--surface-1)]/92 shadow-sm shadow-black/30 backdrop-blur-xl"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <CategoryFilter
             categories={categories}
             selectedCategory={selectedCategory}
@@ -214,74 +287,80 @@ const PageCard = () => {
         </div>
       </div>
 
-      {/* Menu Section */}
-      <section
-        ref={menuSectionRef}
-        className="py-7 sm:py-10"
-        style={lockedSectionHeight ? { minHeight: `${lockedSectionHeight}px` } : undefined}
-      >
+      <section className="py-7 sm:py-10">
         {error && (
-          <p className="text-center text-[var(--state-error-text)] bg-[var(--state-error-bg)] border border-[var(--state-error-border)] rounded-xl max-w-2xl mx-auto px-4 py-3 mb-6">
-            Error cargando articulos: {error}
-          </p>
+          <div className="mx-auto mb-6 max-w-2xl rounded-xl border border-[var(--state-error-border)] bg-[var(--state-error-bg)] px-4 py-3 text-center text-[var(--state-error-text)]">
+            <p>
+              {isOffline
+                ? "Sin conexion. Verifica internet y reintenta."
+                : `Error cargando articulos: ${error}`}
+            </p>
+            <div className="mt-3 flex items-center justify-center gap-3">
+              {isOffline && <WifiOff className="h-4 w-4" aria-hidden="true" />}
+              <button
+                type="button"
+                onClick={retryLoad}
+                className="rounded-full border border-white/30 bg-black/25 px-4 py-1.5 text-sm text-white hover:bg-black/35"
+              >
+                Reintentar
+              </button>
+            </div>
+          </div>
         )}
 
-        {/* Section Header */}
-        <div className="text-center mb-8 sm:mb-10 px-4">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-transparent to-[var(--gold-primary)]"></div>
-            <div className="w-2 h-2 rounded-full bg-[var(--gold-primary)]"></div>
-            <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-[var(--gold-primary)]"></div>
+        <div className="mb-8 px-4 text-center sm:mb-10">
+          <div className="mb-4 flex items-center justify-center gap-4">
+            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[var(--gold-primary)] sm:w-20"></div>
+            <div className="h-2 w-2 rounded-full bg-[var(--gold-primary)]"></div>
+            <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-[var(--gold-primary)] sm:w-20"></div>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl text-[var(--text-primary)] mb-2 uppercase tracking-[0.14em]">
+          <h2 className="mb-2 text-2xl text-[var(--text-primary)] uppercase tracking-[0.14em] sm:text-3xl md:text-4xl">
             {decoded}
           </h2>
-          <p className="text-[var(--text-muted)] text-sm sm:text-base">
-            Descubrí nuestra selección gastronómica
+          <p className="text-sm text-[var(--text-muted)] sm:text-base">
+            Descubri nuestra seleccion gastronomica
           </p>
         </div>
 
-        <div className="max-w-md mx-auto mb-4 px-4 relative group">
-          <div className="absolute inset-y-0 left-8 sm:left-8 flex items-center pointer-events-none">
-            <Search className="w-5 h-5 text-[var(--text-muted)] group-focus-within:text-[var(--gold-primary)] transition-colors" />
+        <div className="group relative mx-auto mb-4 max-w-md px-4">
+          <div className="pointer-events-none absolute inset-y-0 left-8 flex items-center sm:left-8">
+            <Search className="h-5 w-5 text-[var(--text-muted)] transition-colors group-focus-within:text-[var(--gold-primary)]" />
           </div>
           <input
             type="text"
             placeholder="Buscar..."
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-[var(--surface-2)] border border-[var(--line-subtle)] rounded-full py-3 pl-12 pr-12 text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--line-accent)] focus:border-[var(--gold-primary)] transition-all shadow-sm shadow-black/20"
+            onChange={(e) => dispatch({ type: "set_query", payload: e.target.value })}
+            className="w-full rounded-full border border-[var(--line-subtle)] bg-[var(--surface-2)] py-3 pl-12 pr-12 text-[var(--text-primary)] placeholder-[var(--text-muted)] shadow-sm shadow-black/20 transition-all focus:border-[var(--gold-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--line-accent)]"
           />
           {searchQuery && (
             <button
               type="button"
-              onClick={() => setSearchQuery("")}
-              className="absolute inset-y-0 right-8 sm:right-8 flex items-center text-[var(--text-muted)] hover:text-[var(--gold-primary)] transition-colors"
+              onClick={() => dispatch({ type: "set_query", payload: "" })}
+              className="absolute inset-y-0 right-8 flex items-center text-[var(--text-muted)] transition-colors hover:text-[var(--gold-primary)] sm:right-8"
               aria-label="Limpiar busqueda"
             >
-              <X className="w-5 h-5" />
+              <X className="h-5 w-5" />
             </button>
           )}
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 mb-6 sm:mb-8 flex items-center justify-between gap-3 text-sm">
+        <div className="mx-auto mb-6 flex max-w-7xl items-center justify-between gap-3 px-4 text-sm sm:mb-8">
           <p className="text-[var(--text-muted)]">
-            {filteredItems.length}{" "}
-            {filteredItems.length === 1 ? "producto" : "productos"}
+            {filteredItems.length} {filteredItems.length === 1 ? "producto" : "productos"}
           </p>
           {hasActiveFilters && (
             <button
               type="button"
-              onClick={clearFilters}
-              className="rounded-full border border-[var(--line-subtle)] bg-[var(--surface-2)] px-4 py-1.5 text-[var(--text-muted)] hover:text-[var(--gold-primary)] hover:border-[var(--line-accent)] transition-colors"
+              onClick={() => dispatch({ type: "clear_filters" })}
+              className="rounded-full border border-[var(--line-subtle)] bg-[var(--surface-2)] px-4 py-1.5 text-[var(--text-muted)] transition-colors hover:border-[var(--line-accent)] hover:text-[var(--gold-primary)]"
             >
               Limpiar filtros
             </button>
           )}
         </div>
 
-        {/* Menu Grid - Responsive */}
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
           {filteredItems.map((item) => (
             <MenuComponent
               key={getMenuItemKey(item)}
@@ -290,16 +369,17 @@ const PageCard = () => {
             />
           ))}
         </div>
+
         {!error && filteredItems.length === 0 && (
-          <div className="text-center mt-10 px-4">
-            <p className="text-[var(--text-muted)] mb-4">
+          <div className="mt-10 px-4 text-center">
+            <p className="mb-4 text-[var(--text-muted)]">
               No se encontraron productos para tu busqueda.
             </p>
             {hasActiveFilters && (
               <button
                 type="button"
-                onClick={clearFilters}
-                className="rounded-full border border-[var(--line-subtle)] bg-[var(--surface-2)] px-5 py-2 text-sm text-[var(--text-muted)] hover:text-[var(--gold-primary)] hover:border-[var(--line-accent)] transition-colors"
+                onClick={() => dispatch({ type: "clear_filters" })}
+                className="rounded-full border border-[var(--line-subtle)] bg-[var(--surface-2)] px-5 py-2 text-sm text-[var(--text-muted)] transition-colors hover:border-[var(--line-accent)] hover:text-[var(--gold-primary)]"
               >
                 Mostrar todos
               </button>
@@ -313,5 +393,3 @@ const PageCard = () => {
 };
 
 export default PageCard;
-
-

@@ -3,10 +3,150 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/images/logo.salta.icon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Carta Nuevo Casino Alberdi</title>
+    <style>
+      #boot-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+          radial-gradient(circle at 82% -10%, rgba(195, 82, 247, 0.14) 0%, rgba(195, 82, 247, 0) 42%),
+          radial-gradient(circle at 16% -12%, rgba(204, 172, 51, 0.12) 0%, rgba(204, 172, 51, 0) 40%),
+          linear-gradient(180deg, #0b0b0c 0%, #0f1014 54%, #0b0b0c 100%);
+        opacity: 1;
+        transition: opacity 180ms ease;
+      }
+
+      #boot-loader.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .boot-brand-loader {
+        position: relative;
+        width: 240px;
+        min-height: 240px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .boot-brand-loader__scene {
+        position: relative;
+        width: 176px;
+        height: 176px;
+        display: grid;
+        place-items: center;
+      }
+
+      .boot-dots-circle {
+        position: absolute;
+        inset: 0;
+        animation: boot-rotate 3.2s linear infinite;
+      }
+
+      .boot-dot {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        top: 50%;
+        left: 50%;
+        margin-left: -2.5px;
+        margin-top: -2.5px;
+        border-radius: 999px;
+        background: linear-gradient(145deg, #ccac33, #c352f7);
+        box-shadow: 0 0 12px rgba(195, 82, 247, 0.5);
+        transform: rotate(calc(var(--i) * 15deg)) translateX(64px);
+        opacity: 0;
+        animation: boot-fade 1.6s ease-in-out infinite;
+        animation-delay: calc(var(--i) * 0.06s);
+      }
+
+      .boot-brand-loader__badge {
+        width: 92px;
+        height: 92px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 30%, #1f1f26, #141418);
+        border: 1px solid rgba(204, 172, 51, 0.35);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45), inset 0 0 16px rgba(195, 82, 247, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .boot-brand-loader__image {
+        width: 56px;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+      }
+
+      .boot-brand-loader__label {
+        margin: 0;
+        margin-top: 0.5rem;
+        color: #d7d0e8;
+        font-size: 0.78rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      @keyframes boot-rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes boot-fade {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+      }
+    </style>
   </head>
   <body>
+    <div id="boot-loader" aria-hidden="true">
+      <div class="boot-brand-loader">
+        <div class="boot-brand-loader__scene">
+          <div class="boot-dots-circle">
+            <span class="boot-dot" style="--i:0"></span>
+            <span class="boot-dot" style="--i:1"></span>
+            <span class="boot-dot" style="--i:2"></span>
+            <span class="boot-dot" style="--i:3"></span>
+            <span class="boot-dot" style="--i:4"></span>
+            <span class="boot-dot" style="--i:5"></span>
+            <span class="boot-dot" style="--i:6"></span>
+            <span class="boot-dot" style="--i:7"></span>
+            <span class="boot-dot" style="--i:8"></span>
+            <span class="boot-dot" style="--i:9"></span>
+            <span class="boot-dot" style="--i:10"></span>
+            <span class="boot-dot" style="--i:11"></span>
+            <span class="boot-dot" style="--i:12"></span>
+            <span class="boot-dot" style="--i:13"></span>
+            <span class="boot-dot" style="--i:14"></span>
+            <span class="boot-dot" style="--i:15"></span>
+            <span class="boot-dot" style="--i:16"></span>
+            <span class="boot-dot" style="--i:17"></span>
+            <span class="boot-dot" style="--i:18"></span>
+            <span class="boot-dot" style="--i:19"></span>
+            <span class="boot-dot" style="--i:20"></span>
+            <span class="boot-dot" style="--i:21"></span>
+            <span class="boot-dot" style="--i:22"></span>
+            <span class="boot-dot" style="--i:23"></span>
+          </div>
+          <div class="boot-brand-loader__badge">
+            <img src="/images/logo.salta.png" alt="" class="boot-brand-loader__image" />
+          </div>
+        </div>
+        <p class="boot-brand-loader__label">Cargando carta...</p>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -45,6 +45,35 @@ body {
   overflow-x: hidden;
 }
 
+#root {
+  min-height: 100vh;
+}
+
+.app-dvh {
+  min-height: 100vh;
+}
+
+.app-mobile-shell {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@supports (min-height: 100svh) {
+  body,
+  #root,
+  .app-dvh {
+    min-height: 100svh;
+  }
+}
+
+@supports (min-height: 100dvh) {
+  body,
+  #root,
+  .app-dvh {
+    min-height: 100dvh;
+  }
+}
+
 body::before {
   content: "";
   position: fixed;
